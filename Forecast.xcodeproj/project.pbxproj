@@ -12,8 +12,6 @@
 		F36594C428D745130075F879 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36594C328D745130075F879 /* MainViewController.swift */; };
 		F36594C928D745140075F879 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F36594C828D745140075F879 /* Assets.xcassets */; };
 		F36594CC28D745140075F879 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F36594CA28D745140075F879 /* LaunchScreen.storyboard */; };
-		F36594D528D746140075F879 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F36594D428D746140075F879 /* Swinject.framework */; platformFilter = ios; };
-		F36594D628D746140075F879 /* Swinject.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F36594D428D746140075F879 /* Swinject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F36594D928D747FC0075F879 /* ServiceRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36594D828D747FC0075F879 /* ServiceRegister.swift */; };
 		F3D8BC1B28D74FBA00B625EF /* MainConfiguratorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D8BC1A28D74FBA00B625EF /* MainConfiguratorProtocol.swift */; };
 		F3D8BC1D28D74FC800B625EF /* MainConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D8BC1C28D74FC800B625EF /* MainConfigurator.swift */; };
@@ -27,16 +25,21 @@
 		F3D8BC2D28D755B000B625EF /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D8BC2C28D755B000B625EF /* DependencyContainer.swift */; };
 		F3D8BC2F28D7560F00B625EF /* StartAppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D8BC2E28D7560F00B625EF /* StartAppService.swift */; };
 		F3D8BC3128D7569C00B625EF /* StartAppServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D8BC3028D7569C00B625EF /* StartAppServiceProtocol.swift */; };
+		F3D8BC3828D767B300B625EF /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D8BC3728D767B300B625EF /* NetworkServiceProtocol.swift */; };
+		F3D8BC3A28D767C200B625EF /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D8BC3928D767C200B625EF /* NetworkService.swift */; };
+		F3D8BC3D28D769E800B625EF /* CurrentWeatherNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D8BC3C28D769E800B625EF /* CurrentWeatherNetworkService.swift */; };
+		F3E05F0F28D76FC300A53002 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3E05F0E28D76FC300A53002 /* Swinject.framework */; platformFilter = ios; };
+		F3E05F1028D76FC300A53002 /* Swinject.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F3E05F0E28D76FC300A53002 /* Swinject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F36594D728D746140075F879 /* Embed Frameworks */ = {
+		F3E05F1128D76FC300A53002 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F36594D628D746140075F879 /* Swinject.framework in Embed Frameworks */,
+				F3E05F1028D76FC300A53002 /* Swinject.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,6 +68,11 @@
 		F3D8BC2C28D755B000B625EF /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		F3D8BC2E28D7560F00B625EF /* StartAppService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartAppService.swift; sourceTree = "<group>"; };
 		F3D8BC3028D7569C00B625EF /* StartAppServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartAppServiceProtocol.swift; sourceTree = "<group>"; };
+		F3D8BC3728D767B300B625EF /* NetworkServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceProtocol.swift; sourceTree = "<group>"; };
+		F3D8BC3928D767C200B625EF /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		F3D8BC3C28D769E800B625EF /* CurrentWeatherNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherNetworkService.swift; sourceTree = "<group>"; };
+		F3E05F0A28D76F9F00A53002 /* Swinject.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Swinject.xcframework; path = Carthage/Build/Swinject.xcframework; sourceTree = "<group>"; };
+		F3E05F0E28D76FC300A53002 /* Swinject.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Swinject.framework; path = Carthage/Build/iOS/Swinject.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F36594D528D746140075F879 /* Swinject.framework in Frameworks */,
+				F3E05F0F28D76FC300A53002 /* Swinject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +107,7 @@
 		F36594BE28D745130075F879 /* Forecast */ = {
 			isa = PBXGroup;
 			children = (
+				F3D8BC3B28D7683000B625EF /* Models */,
 				F3D8BC3528D75BA000B625EF /* ViewControllers */,
 				F3D8BC3328D75B6C00B625EF /* Services */,
 				F3D8BC3228D75B3F00B625EF /* Assembly */,
@@ -115,6 +124,8 @@
 		F36594D328D746140075F879 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F3E05F0E28D76FC300A53002 /* Swinject.framework */,
+				F3E05F0A28D76F9F00A53002 /* Swinject.xcframework */,
 				F36594D428D746140075F879 /* Swinject.framework */,
 			);
 			name = Frameworks;
@@ -188,6 +199,7 @@
 		F3D8BC3328D75B6C00B625EF /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F3D8BC3628D7671B00B625EF /* NetworkService */,
 				F3D8BC3428D75B8100B625EF /* StartAppService */,
 			);
 			path = Services;
@@ -210,6 +222,23 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		F3D8BC3628D7671B00B625EF /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				F3D8BC3728D767B300B625EF /* NetworkServiceProtocol.swift */,
+				F3D8BC3928D767C200B625EF /* NetworkService.swift */,
+				F3D8BC3C28D769E800B625EF /* CurrentWeatherNetworkService.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		F3D8BC3B28D7683000B625EF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -220,7 +249,7 @@
 				F36594B828D745130075F879 /* Sources */,
 				F36594B928D745130075F879 /* Frameworks */,
 				F36594BA28D745130075F879 /* Resources */,
-				F36594D728D746140075F879 /* Embed Frameworks */,
+				F3E05F1128D76FC300A53002 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -281,10 +310,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3D8BC3D28D769E800B625EF /* CurrentWeatherNetworkService.swift in Sources */,
 				F3D8BC2D28D755B000B625EF /* DependencyContainer.swift in Sources */,
 				F3D8BC2F28D7560F00B625EF /* StartAppService.swift in Sources */,
 				F36594C428D745130075F879 /* MainViewController.swift in Sources */,
 				F3D8BC1B28D74FBA00B625EF /* MainConfiguratorProtocol.swift in Sources */,
+				F3D8BC3A28D767C200B625EF /* NetworkService.swift in Sources */,
+				F3D8BC3828D767B300B625EF /* NetworkServiceProtocol.swift in Sources */,
 				F3D8BC2328D750B200B625EF /* MainRouterProtocol.swift in Sources */,
 				F36594C028D745130075F879 /* AppDelegate.swift in Sources */,
 				F36594D928D747FC0075F879 /* ServiceRegister.swift in Sources */,
@@ -441,6 +473,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Swinject.xcframework/ios-arm64_i386_x86_64-simulator",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Forecast/Info.plist;
@@ -458,6 +491,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = NO;
 			};
 			name = Debug;
 		};
@@ -472,6 +506,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Swinject.xcframework/ios-arm64_i386_x86_64-simulator",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Forecast/Info.plist;
@@ -484,11 +519,13 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "Anton-Usov.Forecast";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_WORKSPACE = NO;
 			};
 			name = Release;
 		};

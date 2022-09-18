@@ -9,4 +9,6 @@ import Foundation
 
 protocol MainInteractorProtocol: AnyObject {
     var presenter: MainPresenterInteractionProtocol! { get }
+    
+    func fetchWeather()
 }

@@ -16,10 +16,10 @@ class MainConfigurator: MainConfiguratorProtocol {
     }
     
     func configure(viewController: MainViewController) {
-//        let analyticsManager = container.resolve(AnalyticsManagerProtocol.self)!
+        let currentWeatherNetworkService = container.resolve(CurrentWeatherNetworkServiceProtocol.self)!
         
         let router = MainRouter(container: container, viewController: viewController)
-        let interactor = MainInteractor()
+        let interactor = MainInteractor(currentWeatherNetworkService: currentWeatherNetworkService)
         let presenter = MainPresenter(router: router, interactor: interactor)
         
         presenter.view = viewController
