@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F35C568128D777B300A4A643 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F36594D428D746140075F879 /* Swinject.framework */; platformFilter = ios; };
+		F35C568228D777B300A4A643 /* Swinject.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F36594D428D746140075F879 /* Swinject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F36594C028D745130075F879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36594BF28D745130075F879 /* AppDelegate.swift */; };
 		F36594C228D745130075F879 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36594C128D745130075F879 /* SceneDelegate.swift */; };
 		F36594C428D745130075F879 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36594C328D745130075F879 /* MainViewController.swift */; };
@@ -28,18 +30,16 @@
 		F3D8BC3828D767B300B625EF /* NetworkServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D8BC3728D767B300B625EF /* NetworkServiceProtocol.swift */; };
 		F3D8BC3A28D767C200B625EF /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D8BC3928D767C200B625EF /* NetworkService.swift */; };
 		F3D8BC3D28D769E800B625EF /* CurrentWeatherNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D8BC3C28D769E800B625EF /* CurrentWeatherNetworkService.swift */; };
-		F3E05F0F28D76FC300A53002 /* Swinject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3E05F0E28D76FC300A53002 /* Swinject.framework */; platformFilter = ios; };
-		F3E05F1028D76FC300A53002 /* Swinject.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F3E05F0E28D76FC300A53002 /* Swinject.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		F3E05F1128D76FC300A53002 /* Embed Frameworks */ = {
+		F35C568328D777B300A4A643 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F3E05F1028D76FC300A53002 /* Swinject.framework in Embed Frameworks */,
+				F35C568228D777B300A4A643 /* Swinject.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,7 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3E05F0F28D76FC300A53002 /* Swinject.framework in Frameworks */,
+				F35C568128D777B300A4A643 /* Swinject.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,7 +249,7 @@
 				F36594B828D745130075F879 /* Sources */,
 				F36594B928D745130075F879 /* Frameworks */,
 				F36594BA28D745130075F879 /* Resources */,
-				F3E05F1128D76FC300A53002 /* Embed Frameworks */,
+				F35C568328D777B300A4A643 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
