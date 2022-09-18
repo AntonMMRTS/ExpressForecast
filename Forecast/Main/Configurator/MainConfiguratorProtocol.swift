@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+protocol MainConfiguratorProtocol {
+    func configure(viewController: MainViewController)
+}

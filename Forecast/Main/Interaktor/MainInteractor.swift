@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+class MainInteractor: MainInteractorProtocol {
+    weak var presenter: MainPresenterInteractionProtocol!
+}

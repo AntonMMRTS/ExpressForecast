@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol MainInteractorProtocol {
-    
+protocol MainInteractorProtocol: AnyObject {
+    var presenter: MainPresenterInteractionProtocol! { get }
 }

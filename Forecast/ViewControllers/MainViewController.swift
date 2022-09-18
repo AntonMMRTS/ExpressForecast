@@ -10,15 +10,20 @@ import Swinject
 
 class MainViewController: UIViewController, MainViewProtocol {
 
-    // MARK: - MainViewProtocol
+    // MARK: - MainViewProtocol Properties
     var presenter: MainPresenterProtocol!
     
+    // MARK: -Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        presenter.configureView()
+    }
+
+    // MARK: - MainViewProtocol Methods
+    func configureView() {
         title = "sfsdfsf"
         view.backgroundColor = .white
     }
-
-
 }
 

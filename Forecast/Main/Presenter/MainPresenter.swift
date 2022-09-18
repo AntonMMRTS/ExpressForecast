@@ -6,3 +6,23 @@
 //
 
 import Foundation
+
+class MainPresenter: MainPresenterProtocol {
+    weak var view: MainViewProtocol!
+    private(set) var router: MainRouterProtocol!
+    private(set) var interactor: MainInteractorProtocol!
+    
+    init(router: MainRouterProtocol,
+         interactor: MainInteractorProtocol) {
+        self.router = router
+        self.interactor = interactor
+    }
+    
+    func configureView() {
+        view.configureView()
+    }
+}
+
+extension MainPresenter: MainPresenterInteractionProtocol {
+    
+}

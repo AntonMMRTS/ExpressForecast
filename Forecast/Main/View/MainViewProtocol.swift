@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+protocol MainViewProtocol: AnyObject {
+    var presenter: MainPresenterProtocol! { get set }
+    
+    func configureView() 
+}
