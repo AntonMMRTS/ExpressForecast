@@ -18,4 +18,13 @@ class MainRouter: MainRouterProtocol {
         self.container = container
         self.viewController = viewController
     }
+    
+    func pushSearchScreen() {
+        guard let nc = viewController.navigationController,
+              let searchConfigurator = container.resolve(SearchConfiguratorProtocol.self) else { return }
+        
+        let vc = SearchViewController()
+        searchConfigurator.configure(viewController: vc)
+        nc.pushViewController(vc, animated: true)
+    }
 }

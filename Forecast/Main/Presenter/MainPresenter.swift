@@ -21,8 +21,12 @@ class MainPresenter: MainPresenterProtocol {
     }
     
     func configureView() {
-        interactor.fetchCurrentWeather()
+//        interactor.fetchCurrentWeather()
         view.configureView()
+    }
+    
+    func pushSearchScreen() {
+        router.pushSearchScreen()
     }
 }
 

@@ -17,12 +17,15 @@ class ServiceRegister {
         
         registerNetworkService(for: container)
         registerLocationService(for: container)
-        registerMainModule(for: container)
+        registerModules(for: container)
     }
     
-    private class func registerMainModule(for container: Container) {
+    private class func registerModules(for container: Container) {
         container.register(MainConfiguratorProtocol.self) { _ in
             return MainConfigurator(container: container)
+        }
+        container.register(SearchConfiguratorProtocol.self) { _ in
+            return SearchConfigurator(container: container)
         }
     }
     

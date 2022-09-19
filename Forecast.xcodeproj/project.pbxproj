@@ -14,6 +14,16 @@
 		F30F732428D83AEF002BE901 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F732328D83AEF002BE901 /* LocationService.swift */; };
 		F30F732628D83F5D002BE901 /* LocationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F732528D83F5D002BE901 /* LocationServiceProtocol.swift */; };
 		F30F732928D868BC002BE901 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F732828D868BC002BE901 /* MainCell.swift */; };
+		F30F732B28D8C30D002BE901 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F732A28D8C30D002BE901 /* SearchViewController.swift */; };
+		F30F733328D8C39B002BE901 /* SearchViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F733228D8C39B002BE901 /* SearchViewProtocol.swift */; };
+		F30F733528D8C3D2002BE901 /* SearchPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F733428D8C3D2002BE901 /* SearchPresenterProtocol.swift */; };
+		F30F733728D8C423002BE901 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F733628D8C423002BE901 /* SearchPresenter.swift */; };
+		F30F733928D8C4A7002BE901 /* SearchRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F733828D8C4A7002BE901 /* SearchRouterProtocol.swift */; };
+		F30F733B28D8C4CF002BE901 /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F733A28D8C4CF002BE901 /* SearchRouter.swift */; };
+		F30F733D28D8C50A002BE901 /* SearchInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F733C28D8C50A002BE901 /* SearchInteractorProtocol.swift */; };
+		F30F733F28D8C53B002BE901 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F733E28D8C53B002BE901 /* SearchInteractor.swift */; };
+		F30F734128D8C5A3002BE901 /* SearchConfiguratorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F734028D8C5A3002BE901 /* SearchConfiguratorProtocol.swift */; };
+		F30F734328D8C5E3002BE901 /* SearchConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F734228D8C5E3002BE901 /* SearchConfigurator.swift */; };
 		F36594C028D745130075F879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36594BF28D745130075F879 /* AppDelegate.swift */; };
 		F36594C228D745130075F879 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36594C128D745130075F879 /* SceneDelegate.swift */; };
 		F36594C428D745130075F879 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36594C328D745130075F879 /* MainViewController.swift */; };
@@ -59,6 +69,16 @@
 		F30F732328D83AEF002BE901 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		F30F732528D83F5D002BE901 /* LocationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceProtocol.swift; sourceTree = "<group>"; };
 		F30F732828D868BC002BE901 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
+		F30F732A28D8C30D002BE901 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		F30F733228D8C39B002BE901 /* SearchViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewProtocol.swift; sourceTree = "<group>"; };
+		F30F733428D8C3D2002BE901 /* SearchPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenterProtocol.swift; sourceTree = "<group>"; };
+		F30F733628D8C423002BE901 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		F30F733828D8C4A7002BE901 /* SearchRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouterProtocol.swift; sourceTree = "<group>"; };
+		F30F733A28D8C4CF002BE901 /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
+		F30F733C28D8C50A002BE901 /* SearchInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractorProtocol.swift; sourceTree = "<group>"; };
+		F30F733E28D8C53B002BE901 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
+		F30F734028D8C5A3002BE901 /* SearchConfiguratorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConfiguratorProtocol.swift; sourceTree = "<group>"; };
+		F30F734228D8C5E3002BE901 /* SearchConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConfigurator.swift; sourceTree = "<group>"; };
 		F36594BF28D745130075F879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F36594C128D745130075F879 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F36594C328D745130075F879 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +142,62 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		F30F732C28D8C334002BE901 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				F30F733128D8C372002BE901 /* Configurator */,
+				F30F733028D8C362002BE901 /* Interactor */,
+				F30F732F28D8C359002BE901 /* Router */,
+				F30F732E28D8C34A002BE901 /* Presenter */,
+				F30F732D28D8C343002BE901 /* View */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		F30F732D28D8C343002BE901 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F30F733228D8C39B002BE901 /* SearchViewProtocol.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F30F732E28D8C34A002BE901 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				F30F733428D8C3D2002BE901 /* SearchPresenterProtocol.swift */,
+				F30F733628D8C423002BE901 /* SearchPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		F30F732F28D8C359002BE901 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				F30F733828D8C4A7002BE901 /* SearchRouterProtocol.swift */,
+				F30F733A28D8C4CF002BE901 /* SearchRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		F30F733028D8C362002BE901 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				F30F733C28D8C50A002BE901 /* SearchInteractorProtocol.swift */,
+				F30F733E28D8C53B002BE901 /* SearchInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		F30F733128D8C372002BE901 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				F30F734028D8C5A3002BE901 /* SearchConfiguratorProtocol.swift */,
+				F30F734228D8C5E3002BE901 /* SearchConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
 		F36594B328D745130075F879 = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +210,7 @@
 		F36594BE28D745130075F879 /* Forecast */ = {
 			isa = PBXGroup;
 			children = (
+				F30F732C28D8C334002BE901 /* Search */,
 				F3D8BC3B28D7683000B625EF /* Models */,
 				F3D8BC3528D75BA000B625EF /* ViewControllers */,
 				F3D8BC3328D75B6C00B625EF /* Services */,
@@ -237,6 +314,7 @@
 			children = (
 				F30F732728D868AD002BE901 /* Cell */,
 				F36594C328D745130075F879 /* MainViewController.swift */,
+				F30F732A28D8C30D002BE901 /* SearchViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -329,6 +407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F30F733528D8C3D2002BE901 /* SearchPresenterProtocol.swift in Sources */,
 				F3D8BC3D28D769E800B625EF /* CurrentWeatherNetworkService.swift in Sources */,
 				F3D8BC2D28D755B000B625EF /* DependencyContainer.swift in Sources */,
 				F30F732428D83AEF002BE901 /* LocationService.swift in Sources */,
@@ -342,15 +421,24 @@
 				F36594D928D747FC0075F879 /* ServiceRegister.swift in Sources */,
 				F3D8BC2528D750E600B625EF /* MainRouter.swift in Sources */,
 				F3D8BC1F28D7500C00B625EF /* MainInteractorProtocol.swift in Sources */,
+				F30F732B28D8C30D002BE901 /* SearchViewController.swift in Sources */,
+				F30F733D28D8C50A002BE901 /* SearchInteractorProtocol.swift in Sources */,
+				F30F733328D8C39B002BE901 /* SearchViewProtocol.swift in Sources */,
 				F30F732628D83F5D002BE901 /* LocationServiceProtocol.swift in Sources */,
 				F3D8BC2928D7512000B625EF /* MainPresenter.swift in Sources */,
 				F3D8BC3128D7569C00B625EF /* StartAppServiceProtocol.swift in Sources */,
 				F30F732928D868BC002BE901 /* MainCell.swift in Sources */,
 				F36594C228D745130075F879 /* SceneDelegate.swift in Sources */,
 				F3D8BC2B28D7514200B625EF /* MainViewProtocol.swift in Sources */,
+				F30F733728D8C423002BE901 /* SearchPresenter.swift in Sources */,
+				F30F734128D8C5A3002BE901 /* SearchConfiguratorProtocol.swift in Sources */,
+				F30F733F28D8C53B002BE901 /* SearchInteractor.swift in Sources */,
 				F3D8BC1D28D74FC800B625EF /* MainConfigurator.swift in Sources */,
+				F30F733B28D8C4CF002BE901 /* SearchRouter.swift in Sources */,
+				F30F734328D8C5E3002BE901 /* SearchConfigurator.swift in Sources */,
 				F3D8BC2728D7510600B625EF /* MainPresenterProtocol.swift in Sources */,
 				F3D8BC2128D7506900B625EF /* MainInteractor.swift in Sources */,
+				F30F733928D8C4A7002BE901 /* SearchRouterProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

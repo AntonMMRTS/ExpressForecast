@@ -14,7 +14,8 @@ protocol MainPresenterProtocol: AnyObject {
     
     var cities: [Weather] { get }
     
-    func configureView() 
+    func configureView()
+    func pushSearchScreen()
 }
 
 protocol MainPresenterInteractionProtocol: AnyObject {

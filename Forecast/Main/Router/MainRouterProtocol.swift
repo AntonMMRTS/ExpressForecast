@@ -9,4 +9,5 @@ import Foundation
 
 protocol MainRouterProtocol: AnyObject {
     
+    func pushSearchScreen()
 }
