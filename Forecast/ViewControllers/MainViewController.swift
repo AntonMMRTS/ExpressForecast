@@ -23,7 +23,7 @@ class MainViewController: UIViewController, MainViewProtocol {
     // MARK: - MainViewProtocol Methods
     func configureView() {
         title = "sfsdfsf"
-        view.backgroundColor = .white
+        view.backgroundColor = .red
     }
 }
 
