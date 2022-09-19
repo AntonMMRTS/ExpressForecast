@@ -9,4 +9,6 @@ import Foundation
 
 protocol SearchInteractorProtocol: AnyObject {
     var presenter: SearchPresenterInteractionProtocol! { get }
+    
+    func searchCity(text: String)
 }

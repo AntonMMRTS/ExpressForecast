@@ -31,6 +31,7 @@ class SearchViewController: UIViewController, SearchViewProtocol {
     
     let searchTextfield: UITextField = {
         let searchTextfield = UITextField()
+        searchTextfield.returnKeyType = .search
 //        searchTextfield.textColor = .darkPrimary
         searchTextfield.font = UIFont(name: "HelveticaNeue-Medium", size: 14)
         searchTextfield.autocapitalizationType = .words
@@ -56,7 +57,10 @@ class SearchViewController: UIViewController, SearchViewProtocol {
     // MARK: - MainViewProtocol Methods
     func configureView() {
         title = "sfsdfsf"
+        searchTextfield.delegate = self
+        searchTextfield.becomeFirstResponder()
         view.backgroundColor = .red
+        initializeHideKeyboard()
         configure()
     }
     
@@ -95,5 +99,32 @@ class SearchViewController: UIViewController, SearchViewProtocol {
     @objc
     private func backButtonDidTap() {
         presenter.backToMainScreen()
+    }
+    
+    private func initializeHideKeyboard() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissKeyboard))
+        
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc
+    private func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    private func searchButtonDidTap() {
+        guard let text = searchTextfield.text, text.count > 2 else { return }
+        
+        presenter.searchCity(text: text)
+    }
+}
+
+extension SearchViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        searchButtonDidTap()
+        return false
     }
 }

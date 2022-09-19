@@ -17,17 +17,16 @@ class SearchInteractor: SearchInteractorProtocol {
         self.currentWeatherNetworkService = currentWeatherNetworkService
     }
     
-//    func fetchCurrentWeather(location: CLLocation) {
-//        let param = [ "lat" : "\(location.coordinate.latitude)",
-//                      "lon" : "\(location.coordinate.longitude)" ]
-//
-//        currentWeatherNetworkService.fetchCurrentWeather(params: param) { [weak self] result in
-//            switch result {
-//            case .success(let response):
-//                self?.presenter.succeccedFetchCurrentWeather(response: response)
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
-//    }
+    func searchCity(text: String) {
+        let param = [ "q" : text ]
+
+        currentWeatherNetworkService.fetchWeather(params: param) { [weak self] result in
+            switch result {
+            case .success(let response):
+                self?.presenter.succeccedFetchCurrentWeather(response: response)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }

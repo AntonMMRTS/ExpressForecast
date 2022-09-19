@@ -25,11 +25,15 @@ class SearchPresenter: SearchPresenterProtocol {
     func backToMainScreen() {
         router.backToMainScreen()
     }
+    
+    func searchCity(text: String) {
+        interactor.searchCity(text: text)
+    }
 }
 
 extension SearchPresenter: SearchPresenterInteractionProtocol {
-//    func succeccedFetchCurrentWeather(response: Weather) {
+    func succeccedFetchCurrentWeather(response: Weather) {
 //        self.cities.append(response)
 //        view.updateView()
-//    }
+    }
 }

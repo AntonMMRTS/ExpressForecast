@@ -15,8 +15,9 @@ protocol SearchPresenterProtocol: AnyObject {
     
     func configureView()
     func backToMainScreen()
+    func searchCity(text: String)
 }
 
 protocol SearchPresenterInteractionProtocol: AnyObject {
-//    func succeccedFetchCurrentWeather(response: Weather)
+    func succeccedFetchCurrentWeather(response: Weather)
 }

@@ -33,7 +33,7 @@ class NetworkService: NetworkServiceProtocol {
 }
 
 extension NetworkService: CurrentWeatherNetworkServiceProtocol {
-    func fetchCurrentWeather(params: [String : String], completion: @escaping (Result<Weather, Error>) -> Void) {
+    func fetchWeather(params: [String : String], completion: @escaping (Result<Weather, Error>) -> Void) {
         request(params: params, completion: completion)
     }
 }

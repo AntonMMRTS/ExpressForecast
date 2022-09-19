@@ -39,7 +39,7 @@ class MainInteractor: MainInteractorProtocol {
         let param = [ "lat" : "\(location.coordinate.latitude)",
                       "lon" : "\(location.coordinate.longitude)" ]
         
-        currentWeatherNetworkService.fetchCurrentWeather(params: param) { [weak self] result in
+        currentWeatherNetworkService.fetchWeather(params: param) { [weak self] result in
             switch result {
             case .success(let response):
                 self?.presenter.succeccedFetchCurrentWeather(response: response)
