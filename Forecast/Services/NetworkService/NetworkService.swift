@@ -10,39 +10,22 @@ import Alamofire
 
 class NetworkService: NetworkServiceProtocol {
     
-    func request<T: Decodable>(completion: @escaping (Result<T, NetworkError>) -> Void) {
-//        let url = URL(string: "https://api.openweathermap.org/data/2.5/forecast?q=London&appid=d931fa462f74e60a23984d4b55410584")!
+    func request<T: Decodable>(completion: @escaping (Result<T, Error>) -> Void) {
         let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=London&appid=d931fa462f74e60a23984d4b55410584")!
-        let request = URLRequest(url: url)
         
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            if let error = error {
-                completion(.failure(.transportError(error)))
-                return
+        AF.request(url, method: .get).responseDecodable(of: T.self) { responce in
+            switch responce.result {
+            case .success(let responce):
+                completion(.success(responce))
+            case .failure(let error):
+                completion(.failure(error))
             }
-            
-            if let response = response as? HTTPURLResponse, !(200...299).contains(response.statusCode) {
-                completion(.failure(.serverError(statusCode: response.statusCode)))
-                return
-            }
-            
-            guard let data = data else {
-                completion(.failure(.noData))
-                return
-            }
-            
-            do {
-                let albums = try JSONDecoder().decode(T.self, from: data)
-                completion(.success(albums))
-            } catch {
-                completion(.failure(.decodingError(error)))
-            }
-        }.resume()
+        }
     }
 }
 
 extension NetworkService: CurrentWeatherNetworkServiceProtocol {
-    func fetchCurrentWeather(completion: @escaping (Result<Weather, NetworkError>) -> Void) {
+    func fetchCurrentWeather(completion: @escaping (Result<Weather, Error>) -> Void) {
         request(completion: completion)
     }
 }

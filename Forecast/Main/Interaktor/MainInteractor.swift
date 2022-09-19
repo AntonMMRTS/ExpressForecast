@@ -17,7 +17,7 @@ class MainInteractor: MainInteractorProtocol {
         self.currentWeatherNetworkService = currentWeatherNetworkService
     }
     
-    func fetchWeather() {
+    func fetchCurrentWeather() {
         currentWeatherNetworkService.fetchCurrentWeather { result in
             switch result {
             case .success(let response):

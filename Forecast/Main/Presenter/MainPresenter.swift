@@ -19,7 +19,7 @@ class MainPresenter: MainPresenterProtocol {
     }
     
     func configureView() {
-        interactor.fetchWeather()
+        interactor.fetchCurrentWeather()
         view.configureView()
     }
 }
