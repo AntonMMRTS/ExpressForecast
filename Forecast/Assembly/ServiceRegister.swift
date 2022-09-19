@@ -16,6 +16,7 @@ class ServiceRegister {
         }
         
         registerNetworkService(for: container)
+        registerLocationService(for: container)
         registerMainModule(for: container)
     }
     
@@ -29,6 +30,13 @@ class ServiceRegister {
         let networkService = NetworkService()
         container.register(CurrentWeatherNetworkServiceProtocol.self) { _ in
             return networkService
+        }.inObjectScope(.container)
+    }
+    
+    private class func registerLocationService(for container: Container) {
+        let locationService = LocationService()
+        container.register(LocationServiceProtocol.self) { _ in
+            return locationService
         }.inObjectScope(.container)
     }
 }

@@ -11,6 +11,8 @@
 		F30F731D28D82CCE002BE901 /* Swinject.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F30F731B28D82CCE002BE901 /* Swinject.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F30F732028D830A7002BE901 /* Alamofire.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F30F731F28D830A7002BE901 /* Alamofire.xcframework */; };
 		F30F732128D830A7002BE901 /* Alamofire.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F30F731F28D830A7002BE901 /* Alamofire.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F30F732428D83AEF002BE901 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F732328D83AEF002BE901 /* LocationService.swift */; };
+		F30F732628D83F5D002BE901 /* LocationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F732528D83F5D002BE901 /* LocationServiceProtocol.swift */; };
 		F36594C028D745130075F879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36594BF28D745130075F879 /* AppDelegate.swift */; };
 		F36594C228D745130075F879 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36594C128D745130075F879 /* SceneDelegate.swift */; };
 		F36594C428D745130075F879 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36594C328D745130075F879 /* MainViewController.swift */; };
@@ -53,6 +55,8 @@
 		F30F731B28D82CCE002BE901 /* Swinject.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Swinject.xcframework; path = Carthage/Build/Swinject.xcframework; sourceTree = "<group>"; };
 		F30F731E28D82CCE002BE901 /* Forecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30F731F28D830A7002BE901 /* Alamofire.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Alamofire.xcframework; path = Carthage/Build/Alamofire.xcframework; sourceTree = "<group>"; };
+		F30F732328D83AEF002BE901 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		F30F732528D83F5D002BE901 /* LocationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceProtocol.swift; sourceTree = "<group>"; };
 		F36594BF28D745130075F879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F36594C128D745130075F879 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F36594C328D745130075F879 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +101,15 @@
 				F30F731B28D82CCE002BE901 /* Swinject.xcframework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F30F732228D83AD9002BE901 /* LocationService */ = {
+			isa = PBXGroup;
+			children = (
+				F30F732328D83AEF002BE901 /* LocationService.swift */,
+				F30F732528D83F5D002BE901 /* LocationServiceProtocol.swift */,
+			);
+			path = LocationService;
 			sourceTree = "<group>";
 		};
 		F36594B328D745130075F879 = {
@@ -193,6 +206,7 @@
 		F3D8BC3328D75B6C00B625EF /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F30F732228D83AD9002BE901 /* LocationService */,
 				F3D8BC3628D7671B00B625EF /* NetworkService */,
 				F3D8BC3428D75B8100B625EF /* StartAppService */,
 			);
@@ -306,6 +320,7 @@
 			files = (
 				F3D8BC3D28D769E800B625EF /* CurrentWeatherNetworkService.swift in Sources */,
 				F3D8BC2D28D755B000B625EF /* DependencyContainer.swift in Sources */,
+				F30F732428D83AEF002BE901 /* LocationService.swift in Sources */,
 				F3D8BC2F28D7560F00B625EF /* StartAppService.swift in Sources */,
 				F36594C428D745130075F879 /* MainViewController.swift in Sources */,
 				F3D8BC1B28D74FBA00B625EF /* MainConfiguratorProtocol.swift in Sources */,
@@ -316,6 +331,7 @@
 				F36594D928D747FC0075F879 /* ServiceRegister.swift in Sources */,
 				F3D8BC2528D750E600B625EF /* MainRouter.swift in Sources */,
 				F3D8BC1F28D7500C00B625EF /* MainInteractorProtocol.swift in Sources */,
+				F30F732628D83F5D002BE901 /* LocationServiceProtocol.swift in Sources */,
 				F3D8BC2928D7512000B625EF /* MainPresenter.swift in Sources */,
 				F3D8BC3128D7569C00B625EF /* StartAppServiceProtocol.swift in Sources */,
 				F36594C228D745130075F879 /* SceneDelegate.swift in Sources */,

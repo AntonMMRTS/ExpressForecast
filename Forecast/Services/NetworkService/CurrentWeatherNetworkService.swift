@@ -8,5 +8,5 @@
 import Foundation
 
 protocol CurrentWeatherNetworkServiceProtocol {
-    func fetchCurrentWeather(completion: @escaping (Result<Weather, Error>) -> Void)
+    func fetchCurrentWeather(params: [String : String], completion: @escaping (Result<Weather, Error>) -> Void)
 }

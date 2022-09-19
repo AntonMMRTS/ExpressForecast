@@ -17,11 +17,14 @@ class MainConfigurator: MainConfiguratorProtocol {
     
     func configure(viewController: MainViewController) {
         let currentWeatherNetworkService = container.resolve(CurrentWeatherNetworkServiceProtocol.self)!
+        var locationService = container.resolve(LocationServiceProtocol.self)!
         
         let router = MainRouter(container: container, viewController: viewController)
-        let interactor = MainInteractor(currentWeatherNetworkService: currentWeatherNetworkService)
+        let interactor = MainInteractor(currentWeatherNetworkService: currentWeatherNetworkService,
+                                        locationService: locationService)
         let presenter = MainPresenter(router: router, interactor: interactor)
         
+        locationService.delegate = interactor
         presenter.view = viewController
         interactor.presenter = presenter
         viewController.presenter = presenter
