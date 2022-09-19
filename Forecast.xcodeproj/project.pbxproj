@@ -210,12 +210,12 @@
 		F36594BE28D745130075F879 /* Forecast */ = {
 			isa = PBXGroup;
 			children = (
-				F30F732C28D8C334002BE901 /* Search */,
 				F3D8BC3B28D7683000B625EF /* Models */,
 				F3D8BC3528D75BA000B625EF /* ViewControllers */,
 				F3D8BC3328D75B6C00B625EF /* Services */,
 				F3D8BC3228D75B3F00B625EF /* Assembly */,
 				F3D8BC1428D74F5100B625EF /* Main */,
+				F30F732C28D8C334002BE901 /* Search */,
 				F36594BF28D745130075F879 /* AppDelegate.swift */,
 				F36594C128D745130075F879 /* SceneDelegate.swift */,
 				F36594C828D745140075F879 /* Assets.xcassets */,

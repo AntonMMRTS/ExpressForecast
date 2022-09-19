@@ -19,7 +19,8 @@ class SearchRouter: SearchRouterProtocol {
         self.viewController = viewController
     }
     
-//    func pushSearchScreen() {
-//        
-//    }
+    func backToMainScreen() {
+        guard let nc = viewController.navigationController else { return }
+        nc.popViewController(animated: true)
+    }
 }

@@ -22,6 +22,12 @@ class MainViewController: UIViewController, MainViewProtocol {
        
         presenter.configureView()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        configureNavigationBar()
+    }
 
     // MARK: - MainViewProtocol Methods
     func configureView() {

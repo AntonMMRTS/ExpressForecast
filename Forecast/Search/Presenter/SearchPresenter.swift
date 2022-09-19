@@ -21,6 +21,10 @@ class SearchPresenter: SearchPresenterProtocol {
     func configureView() {
         view.configureView()
     }
+    
+    func backToMainScreen() {
+        router.backToMainScreen()
+    }
 }
 
 extension SearchPresenter: SearchPresenterInteractionProtocol {

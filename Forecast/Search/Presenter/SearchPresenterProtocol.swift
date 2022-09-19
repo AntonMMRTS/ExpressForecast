@@ -14,6 +14,7 @@ protocol SearchPresenterProtocol: AnyObject {
     
     
     func configureView()
+    func backToMainScreen()
 }
 
 protocol SearchPresenterInteractionProtocol: AnyObject {
