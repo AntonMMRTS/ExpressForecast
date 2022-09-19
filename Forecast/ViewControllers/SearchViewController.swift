@@ -22,23 +22,29 @@ class SearchViewController: UIViewController, SearchViewProtocol {
         return searchView
     }()
     
-    let backButton: UIButton = {
+    private let backButton: UIButton = {
         let backButton = UIButton()
         backButton.translatesAutoresizingMaskIntoConstraints = false
         backButton.setImage(UIImage(named: "backIcon"), for: .normal)
         return backButton
     }()
     
-    let searchTextfield: UITextField = {
+    private let searchTextfield: UITextField = {
         let searchTextfield = UITextField()
         searchTextfield.returnKeyType = .search
-//        searchTextfield.textColor = .darkPrimary
         searchTextfield.font = UIFont(name: "HelveticaNeue-Medium", size: 14)
         searchTextfield.autocapitalizationType = .words
         searchTextfield.backgroundColor = .white
         searchTextfield.clearButtonMode = .always
         searchTextfield.translatesAutoresizingMaskIntoConstraints = false
         return searchTextfield
+    }()
+    
+    private let citiesTableView: UITableView = {
+        let citiesTableView = UITableView()
+        citiesTableView.translatesAutoresizingMaskIntoConstraints = false
+        citiesTableView.register(SearchCell.self, forCellReuseIdentifier: SearchCell.identifier)
+        return citiesTableView
     }()
     
     // MARK: -Life cycle
@@ -48,20 +54,20 @@ class SearchViewController: UIViewController, SearchViewProtocol {
         presenter.configureView()
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        
-//        navigationItemSettings()
-//    }
-    
     // MARK: - MainViewProtocol Methods
     func configureView() {
         title = "sfsdfsf"
         searchTextfield.delegate = self
+        citiesTableView.delegate = self
+        citiesTableView.dataSource = self
         searchTextfield.becomeFirstResponder()
         view.backgroundColor = .red
         initializeHideKeyboard()
         configure()
+    }
+    
+    func updateView() {
+        citiesTableView.reloadData()
     }
     
     // MARK: - Private Methods
@@ -69,6 +75,7 @@ class SearchViewController: UIViewController, SearchViewProtocol {
         searchView.addSubview(backButton)
         searchView.addSubview(searchTextfield)
         view.addSubview(searchView)
+        view.addSubview(citiesTableView)
         
         NSLayoutConstraint.activate([
             backButton.heightAnchor.constraint(equalToConstant: 44),
@@ -84,7 +91,12 @@ class SearchViewController: UIViewController, SearchViewProtocol {
             searchView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 8),
             searchView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -8),
             searchView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8),
-            searchView.heightAnchor.constraint(equalToConstant: 44)
+            searchView.heightAnchor.constraint(equalToConstant: 44),
+            
+            citiesTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            citiesTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            citiesTableView.topAnchor.constraint(equalTo: searchView.bottomAnchor, constant: 8),
+            citiesTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
         
         backButton.addTarget(self, action: #selector(backButtonDidTap), for: .touchUpInside)
@@ -127,4 +139,21 @@ extension SearchViewController: UITextFieldDelegate {
         searchButtonDidTap()
         return false
     }
+}
+
+extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        presenter.cities.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let city = presenter.cities[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: SearchCell.identifier, for: indexPath) as! SearchCell
+        cell.configure(city: city) {
+            print("sdsdfsdfsdfgsdfsdgfsdg")
+        }
+        return cell
+    }
+    
+    
 }

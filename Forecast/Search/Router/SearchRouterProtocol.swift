@@ -9,4 +9,5 @@ import Foundation
 
 protocol SearchRouterProtocol: AnyObject {
     func backToMainScreen()
+    func presentAlert()
 }

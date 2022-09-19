@@ -12,6 +12,7 @@ protocol SearchPresenterProtocol: AnyObject {
     var router: SearchRouterProtocol! { get }
     var interactor: SearchInteractorProtocol! { get }
     
+    var cities: [Weather] { get }
     
     func configureView()
     func backToMainScreen()
@@ -20,4 +21,5 @@ protocol SearchPresenterProtocol: AnyObject {
 
 protocol SearchPresenterInteractionProtocol: AnyObject {
     func succeccedFetchCurrentWeather(response: Weather)
+    func failureRequest()
 }

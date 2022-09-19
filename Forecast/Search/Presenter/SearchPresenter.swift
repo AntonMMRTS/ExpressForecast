@@ -12,6 +12,12 @@ class SearchPresenter: SearchPresenterProtocol {
     private(set) var router: SearchRouterProtocol!
     private(set) var interactor: SearchInteractorProtocol!
     
+    private(set) var cities: [Weather]  = [] {
+        didSet {
+            view.updateView()
+        }
+    }
+    
     init(router: SearchRouterProtocol,
          interactor: SearchInteractorProtocol) {
         self.router = router
@@ -33,7 +39,11 @@ class SearchPresenter: SearchPresenterProtocol {
 
 extension SearchPresenter: SearchPresenterInteractionProtocol {
     func succeccedFetchCurrentWeather(response: Weather) {
-//        self.cities.append(response)
+        self.cities.append(response)
 //        view.updateView()
+    }
+    
+    func failureRequest() {
+        router.presentAlert()
     }
 }

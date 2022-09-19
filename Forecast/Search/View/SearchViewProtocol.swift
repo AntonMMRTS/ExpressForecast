@@ -11,4 +11,5 @@ protocol SearchViewProtocol: AnyObject {
     var presenter: SearchPresenterProtocol! { get set }
     
     func configureView()
+    func updateView()
 }

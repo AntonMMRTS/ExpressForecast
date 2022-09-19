@@ -35,4 +35,8 @@ extension MainPresenter: MainPresenterInteractionProtocol {
         self.cities.append(response)
         view.updateView()
     }
+    
+    func failureRequest() {
+        router.presentAlert()
+    }
 }

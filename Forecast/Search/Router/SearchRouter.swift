@@ -23,4 +23,17 @@ class SearchRouter: SearchRouterProtocol {
         guard let nc = viewController.navigationController else { return }
         nc.popViewController(animated: true)
     }
+    
+    func presentAlert() {
+        let alert = UIAlertController(title: "Что то пошло не так",
+                                      message: nil
+                                      ,
+                                      preferredStyle: .alert)
+        let button = UIAlertAction(title: "OK",
+                                   style: .default,
+                                   handler: nil)
+        
+        alert.addAction(button)
+        viewController.present(alert, animated: true)
+    }
 }

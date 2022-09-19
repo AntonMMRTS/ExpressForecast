@@ -25,7 +25,7 @@ class SearchInteractor: SearchInteractorProtocol {
             case .success(let response):
                 self?.presenter.succeccedFetchCurrentWeather(response: response)
             case .failure(let error):
-                print(error)
+                self?.presenter.failureRequest()
             }
         }
     }

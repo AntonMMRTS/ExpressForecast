@@ -24,6 +24,7 @@
 		F30F733F28D8C53B002BE901 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F733E28D8C53B002BE901 /* SearchInteractor.swift */; };
 		F30F734128D8C5A3002BE901 /* SearchConfiguratorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F734028D8C5A3002BE901 /* SearchConfiguratorProtocol.swift */; };
 		F30F734328D8C5E3002BE901 /* SearchConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F734228D8C5E3002BE901 /* SearchConfigurator.swift */; };
+		F30F734528D8E2F6002BE901 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F734428D8E2F6002BE901 /* SearchCell.swift */; };
 		F36594C028D745130075F879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36594BF28D745130075F879 /* AppDelegate.swift */; };
 		F36594C228D745130075F879 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36594C128D745130075F879 /* SceneDelegate.swift */; };
 		F36594C428D745130075F879 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36594C328D745130075F879 /* MainViewController.swift */; };
@@ -79,6 +80,7 @@
 		F30F733E28D8C53B002BE901 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
 		F30F734028D8C5A3002BE901 /* SearchConfiguratorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConfiguratorProtocol.swift; sourceTree = "<group>"; };
 		F30F734228D8C5E3002BE901 /* SearchConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConfigurator.swift; sourceTree = "<group>"; };
+		F30F734428D8E2F6002BE901 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		F36594BF28D745130075F879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F36594C128D745130075F879 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F36594C328D745130075F879 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				F30F732828D868BC002BE901 /* MainCell.swift */,
+				F30F734428D8E2F6002BE901 /* SearchCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F30F733528D8C3D2002BE901 /* SearchPresenterProtocol.swift in Sources */,
+				F30F734528D8E2F6002BE901 /* SearchCell.swift in Sources */,
 				F3D8BC3D28D769E800B625EF /* CurrentWeatherNetworkService.swift in Sources */,
 				F3D8BC2D28D755B000B625EF /* DependencyContainer.swift in Sources */,
 				F30F732428D83AEF002BE901 /* LocationService.swift in Sources */,
