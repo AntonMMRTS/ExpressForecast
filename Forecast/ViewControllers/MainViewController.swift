@@ -26,8 +26,13 @@ class MainViewController: UIViewController, MainViewProtocol {
     // MARK: - MainViewProtocol Methods
     func configureView() {
         title = "sfsdfsf"
-        view.backgroundColor = .red
+        view.backgroundColor = .white
         configureCollectionView()
+        configureNavigationBar()
+    }
+    
+    func updateView() {
+        citiesCollectionView.reloadData()
     }
     
     // MARK: - Private Methods
@@ -59,17 +64,34 @@ class MainViewController: UIViewController, MainViewProtocol {
             citiesCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
+    
+    private func configureNavigationBar() {
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        
+        let searchButton = UIBarButtonItem(image: UIImage(named: "searchIcon"),
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(searchButtonDidTap))
+        navigationItem.rightBarButtonItem = searchButton
+    }
+    
+    @objc func searchButtonDidTap() {
+        presenter.pushSearchScreen()
+    }
 }
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        presenter.cities.count
-        2
+        presenter.cities.count
+//        1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let city = presenter.cities[indexPath.row]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCell.identifier, for: indexPath) as! MainCell
+        cell.configure(city: city)
         return cell
     }
     

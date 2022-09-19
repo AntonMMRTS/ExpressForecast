@@ -18,5 +18,5 @@ protocol MainPresenterProtocol: AnyObject {
 }
 
 protocol MainPresenterInteractionProtocol: AnyObject {
-    
+    func succeccedFetchCurrentWeather(response: Weather)
 }

@@ -10,5 +10,6 @@ import Foundation
 protocol MainViewProtocol: AnyObject {
     var presenter: MainPresenterProtocol! { get set }
     
-    func configureView() 
+    func configureView()
+    func updateView()
 }

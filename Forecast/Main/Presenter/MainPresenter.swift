@@ -21,11 +21,14 @@ class MainPresenter: MainPresenterProtocol {
     }
     
     func configureView() {
-//        interactor.fetchCurrentWeather()
+        interactor.fetchCurrentWeather()
         view.configureView()
     }
 }
 
 extension MainPresenter: MainPresenterInteractionProtocol {
-    
+    func succeccedFetchCurrentWeather(response: Weather) {
+        self.cities.append(response)
+        view.updateView()
+    }
 }
