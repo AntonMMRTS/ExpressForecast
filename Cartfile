@@ -1,4 +1,5 @@
 github "Swinject/Swinject"
+github "Alamofire/Alamofire"
 
 # Uncomment if you use SwinjectStoryboard
 # github "Swinject/SwinjectStoryboard"

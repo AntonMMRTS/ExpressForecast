@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		F30F731C28D82CCE002BE901 /* Swinject.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F30F731B28D82CCE002BE901 /* Swinject.xcframework */; };
 		F30F731D28D82CCE002BE901 /* Swinject.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F30F731B28D82CCE002BE901 /* Swinject.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F30F732028D830A7002BE901 /* Alamofire.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F30F731F28D830A7002BE901 /* Alamofire.xcframework */; };
+		F30F732128D830A7002BE901 /* Alamofire.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F30F731F28D830A7002BE901 /* Alamofire.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F36594C028D745130075F879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36594BF28D745130075F879 /* AppDelegate.swift */; };
 		F36594C228D745130075F879 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36594C128D745130075F879 /* SceneDelegate.swift */; };
 		F36594C428D745130075F879 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36594C328D745130075F879 /* MainViewController.swift */; };
@@ -39,6 +41,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				F30F732128D830A7002BE901 /* Alamofire.xcframework in Embed Frameworks */,
 				F30F731D28D82CCE002BE901 /* Swinject.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -49,6 +52,7 @@
 /* Begin PBXFileReference section */
 		F30F731B28D82CCE002BE901 /* Swinject.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Swinject.xcframework; path = Carthage/Build/Swinject.xcframework; sourceTree = "<group>"; };
 		F30F731E28D82CCE002BE901 /* Forecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Forecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F30F731F28D830A7002BE901 /* Alamofire.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Alamofire.xcframework; path = Carthage/Build/Alamofire.xcframework; sourceTree = "<group>"; };
 		F36594BF28D745130075F879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F36594C128D745130075F879 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F36594C328D745130075F879 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F30F732028D830A7002BE901 /* Alamofire.xcframework in Frameworks */,
 				F30F731C28D82CCE002BE901 /* Swinject.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,6 +93,7 @@
 		F30F731A28D82CCE002BE901 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F30F731F28D830A7002BE901 /* Alamofire.xcframework */,
 				F30F731B28D82CCE002BE901 /* Swinject.xcframework */,
 			);
 			name = Frameworks;
