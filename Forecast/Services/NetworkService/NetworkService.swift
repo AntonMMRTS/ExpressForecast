@@ -11,9 +11,14 @@ import Alamofire
 class NetworkService: NetworkServiceProtocol {
     
     func request<T: Decodable>(completion: @escaping (Result<T, Error>) -> Void) {
-        let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=London&appid=d931fa462f74e60a23984d4b55410584")!
+        let baseUrl = "https://api.openweathermap.org/data/2.5/"
+        let appid = "d931fa462f74e60a23984d4b55410584"
+        let q = "London"
         
-        AF.request(url, method: .get).responseDecodable(of: T.self) { responce in
+        let param = ["appid" : appid, "q" : q]
+        let url = baseUrl + "weather"
+        
+        AF.request(url, method: .get, parameters: param).responseDecodable(of: T.self) { responce in
             switch responce.result {
             case .success(let responce):
                 completion(.success(responce))
