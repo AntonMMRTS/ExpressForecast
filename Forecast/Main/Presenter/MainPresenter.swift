@@ -12,6 +12,8 @@ class MainPresenter: MainPresenterProtocol {
     private(set) var router: MainRouterProtocol!
     private(set) var interactor: MainInteractorProtocol!
     
+    private(set) var cities: [Weather]  = []
+    
     init(router: MainRouterProtocol,
          interactor: MainInteractorProtocol) {
         self.router = router
@@ -19,7 +21,7 @@ class MainPresenter: MainPresenterProtocol {
     }
     
     func configureView() {
-        interactor.fetchCurrentWeather()
+//        interactor.fetchCurrentWeather()
         view.configureView()
     }
 }

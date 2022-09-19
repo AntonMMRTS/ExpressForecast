@@ -12,6 +12,8 @@ protocol MainPresenterProtocol: AnyObject {
     var router: MainRouterProtocol! { get }
     var interactor: MainInteractorProtocol! { get }
     
+    var cities: [Weather] { get }
+    
     func configureView() 
 }
 

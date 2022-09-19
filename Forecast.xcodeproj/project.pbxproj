@@ -13,6 +13,7 @@
 		F30F732128D830A7002BE901 /* Alamofire.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F30F731F28D830A7002BE901 /* Alamofire.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F30F732428D83AEF002BE901 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F732328D83AEF002BE901 /* LocationService.swift */; };
 		F30F732628D83F5D002BE901 /* LocationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F732528D83F5D002BE901 /* LocationServiceProtocol.swift */; };
+		F30F732928D868BC002BE901 /* MainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F732828D868BC002BE901 /* MainCell.swift */; };
 		F36594C028D745130075F879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36594BF28D745130075F879 /* AppDelegate.swift */; };
 		F36594C228D745130075F879 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36594C128D745130075F879 /* SceneDelegate.swift */; };
 		F36594C428D745130075F879 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36594C328D745130075F879 /* MainViewController.swift */; };
@@ -57,6 +58,7 @@
 		F30F731F28D830A7002BE901 /* Alamofire.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Alamofire.xcframework; path = Carthage/Build/Alamofire.xcframework; sourceTree = "<group>"; };
 		F30F732328D83AEF002BE901 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		F30F732528D83F5D002BE901 /* LocationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceProtocol.swift; sourceTree = "<group>"; };
+		F30F732828D868BC002BE901 /* MainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCell.swift; sourceTree = "<group>"; };
 		F36594BF28D745130075F879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F36594C128D745130075F879 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F36594C328D745130075F879 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +112,14 @@
 				F30F732528D83F5D002BE901 /* LocationServiceProtocol.swift */,
 			);
 			path = LocationService;
+			sourceTree = "<group>";
+		};
+		F30F732728D868AD002BE901 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F30F732828D868BC002BE901 /* MainCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		F36594B328D745130075F879 = {
@@ -225,6 +235,7 @@
 		F3D8BC3528D75BA000B625EF /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				F30F732728D868AD002BE901 /* Cell */,
 				F36594C328D745130075F879 /* MainViewController.swift */,
 			);
 			path = ViewControllers;
@@ -334,6 +345,7 @@
 				F30F732628D83F5D002BE901 /* LocationServiceProtocol.swift in Sources */,
 				F3D8BC2928D7512000B625EF /* MainPresenter.swift in Sources */,
 				F3D8BC3128D7569C00B625EF /* StartAppServiceProtocol.swift in Sources */,
+				F30F732928D868BC002BE901 /* MainCell.swift in Sources */,
 				F36594C228D745130075F879 /* SceneDelegate.swift in Sources */,
 				F3D8BC2B28D7514200B625EF /* MainViewProtocol.swift in Sources */,
 				F3D8BC1D28D74FC800B625EF /* MainConfigurator.swift in Sources */,
