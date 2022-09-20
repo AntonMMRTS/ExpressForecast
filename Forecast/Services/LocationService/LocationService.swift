@@ -33,6 +33,7 @@ class LocationService: NSObject, CLLocationManagerDelegate, LocationServiceProto
         guard let location = locations.first else { return }
         
         manager.stopUpdatingLocation()
+        self.manager?.stopUpdatingLocation()
         delegate.updateLocation(location: location)
     }
     

@@ -22,7 +22,8 @@ class MainPresenter: MainPresenterProtocol {
     }
     
     func configureView() {
-//        interactor.fetchCurrentWeather()
+        interactor.fetchCurrentWeather()
+        cities = interactor.fetchCitiesFromDatabase()
         view.configureView()
     }
     
@@ -33,7 +34,13 @@ class MainPresenter: MainPresenterProtocol {
 
 extension MainPresenter: MainPresenterInteractionProtocol {
     func succeccedFetchCurrentWeather(response: Weather) {
-        self.cities.append(response)
+        if let index = cities.firstIndex(where: { $0.name == response.name }) {
+            interactor.deleteCityFromDatabase(city: cities[index])
+            cities.remove(at: index)
+           
+        }
+        cities.insert(response, at: 0)
+        interactor.addCityToDatabase(city: response)
         view.updateView()
     }
     

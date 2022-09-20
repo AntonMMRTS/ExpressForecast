@@ -55,6 +55,14 @@ class MainInteractor: MainInteractorProtocol {
     func fetchCitiesFromDatabase() -> [Weather] {
         databaseService.fetchCities()
     }
+    
+    func addCityToDatabase(city: Weather) {
+        databaseService.addNewCity(city: city)
+    }
+    
+    func deleteCityFromDatabase(city: Weather) {
+        databaseService.deleteCity(city: city)
+    }
 }
 
 extension MainInteractor: LocationDelegate {

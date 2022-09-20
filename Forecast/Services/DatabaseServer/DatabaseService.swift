@@ -35,6 +35,7 @@ class DatabaseService: DatabaseServiceProtocol {
     func fetchCities() -> [Weather] {
         let models = realm.objects(Weather.self)
         return Array(models)
+        return []
     }
     
     func deleteCity(city: Weather) {

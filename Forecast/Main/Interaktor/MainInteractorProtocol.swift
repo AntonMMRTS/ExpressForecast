@@ -11,4 +11,7 @@ protocol MainInteractorProtocol: AnyObject {
     var presenter: MainPresenterInteractionProtocol! { get }
     
     func fetchCurrentWeather()
+    func fetchCitiesFromDatabase() -> [Weather]
+    func addCityToDatabase(city: Weather)
+    func deleteCityFromDatabase(city: Weather)
 }

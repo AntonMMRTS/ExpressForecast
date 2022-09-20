@@ -57,12 +57,11 @@ class Description: Object, Decodable {
     @objc dynamic var id: Int = 0
 }
 
-extension List : Decodable where Element : Decodable {
+extension RealmSwift.List: Decodable where Element: Decodable {
     public convenience init(from decoder: Decoder) throws {
         self.init()
-        var container = try decoder.unkeyedContainer()
-        while !container.isAtEnd {
-            let element = try container.decode(Element.self)
-            self.append(element)
-        }
-    } }
+        let container = try decoder.singleValueContainer()
+        let decodedElements = try container.decode([Element].self)
+        self.append(objectsIn: decodedElements)
+    }
+}
