@@ -12,6 +12,7 @@ protocol LocationServiceProtocol {
     var location: CLLocation? { get }
     var isPermission: Bool { get }
     var delegate: LocationDelegate! { get set }
+    var status: CLAuthorizationStatus? { get }
     
     func checkPermission()
 }

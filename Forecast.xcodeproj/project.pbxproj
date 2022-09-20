@@ -259,6 +259,16 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		F314C4E528DA1DE20030FD01 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				F30F732C28D8C334002BE901 /* Search */,
+				F3D8BC1428D74F5100B625EF /* Main */,
+				F3D8BC3528D75BA000B625EF /* ViewControllers */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		F36594B328D745130075F879 = {
 			isa = PBXGroup;
 			children = (
@@ -271,13 +281,10 @@
 		F36594BE28D745130075F879 /* Forecast */ = {
 			isa = PBXGroup;
 			children = (
+				F314C4E528DA1DE20030FD01 /* Modules */,
 				F314C4E128DA0E830030FD01 /* UI */,
-				F3D8BC3B28D7683000B625EF /* Models */,
-				F3D8BC3528D75BA000B625EF /* ViewControllers */,
 				F3D8BC3328D75B6C00B625EF /* Services */,
 				F3D8BC3228D75B3F00B625EF /* Assembly */,
-				F3D8BC1428D74F5100B625EF /* Main */,
-				F30F732C28D8C334002BE901 /* Search */,
 				F36594BF28D745130075F879 /* AppDelegate.swift */,
 				F36594C128D745130075F879 /* SceneDelegate.swift */,
 				F36594C828D745140075F879 /* Assets.xcassets */,
@@ -392,13 +399,6 @@
 				F3D8BC3C28D769E800B625EF /* CurrentWeatherNetworkService.swift */,
 			);
 			path = NetworkService;
-			sourceTree = "<group>";
-		};
-		F3D8BC3B28D7683000B625EF /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

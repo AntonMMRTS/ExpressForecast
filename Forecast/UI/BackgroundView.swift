@@ -14,6 +14,7 @@ class BackgroundView: UIView {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.font = UIFont(name: "HelveticaNeue-Medium", size: 22)
         titleLabel.textAlignment = .center
+        titleLabel.textColor = .black
         titleLabel.numberOfLines = 0
         titleLabel.text = "У Вас пока нет избранных городов"
         return titleLabel

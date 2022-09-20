@@ -38,11 +38,6 @@ class SearchCell: UITableViewCell {
         fatalError("not implemented")
     }
     
-//    override func prepareForReuse() {
-//        super.prepareForReuse()
-//        actionButton.isHidden = true
-//    }
-    
     func configure(city: Weather, completion: (() -> Void)? = nil) {
         cityLabel.text = city.name
         

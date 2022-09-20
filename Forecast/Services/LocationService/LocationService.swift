@@ -15,6 +15,8 @@ protocol LocationDelegate: AnyObject {
 class LocationService: NSObject, CLLocationManagerDelegate, LocationServiceProtocol {
     var delegate: LocationDelegate!
     
+    var status: CLAuthorizationStatus?
+    
     var manager: CLLocationManager?
     var location: CLLocation?
     var isLocation: Bool = false
@@ -27,11 +29,14 @@ class LocationService: NSObject, CLLocationManagerDelegate, LocationServiceProto
         manager?.delegate = self
         manager?.desiredAccuracy = kCLLocationAccuracyBest
         manager?.startMonitoringSignificantLocationChanges()
+//        manager?.requestWhenInUseAuthorization()
+        status = manager?.authorizationStatus
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else { return }
         
+        self.manager?.stopMonitoringSignificantLocationChanges()
         delegate.updateLocation(location: location)
     }
     
@@ -39,17 +44,16 @@ class LocationService: NSObject, CLLocationManagerDelegate, LocationServiceProto
         manager?.requestWhenInUseAuthorization()
     }
     
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        
-        switch manager.authorizationStatus {
-        case .authorizedAlways , .authorizedWhenInUse:
-            isPermission = true
-        case .notDetermined , .denied , .restricted:
-           break
-        default:
-            break
-        }
-    }
+//    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+//
+//        switch manager.authorizationStatus {
+//        case .authorizedAlways, .authorizedWhenInUse:
+//            isPermission = true
+//        case .notDetermined , .denied , .restricted:
+//           break
+//        default:
+//            break
+//        }
+//    }
 }
     
-

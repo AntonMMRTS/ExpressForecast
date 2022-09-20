@@ -56,8 +56,8 @@ class MainViewController: UIViewController, MainViewProtocol {
         citiesCollectionView.backgroundColor = .black
         citiesCollectionView.register(MainCell.self,
                                         forCellWithReuseIdentifier: MainCell.identifier)
+        citiesCollectionView.isPagingEnabled = true
         
-//        citiesCollectionView.backgroundView = UIImageView(image: UIImage(named: "clear"))
         citiesCollectionView.backgroundView = BackgroundView()
         
         citiesCollectionView.delegate = self

@@ -29,15 +29,14 @@ class MainInteractor: MainInteractorProtocol {
     
     
     func fetchCurrentWeather() {
-        guard locationService.isPermission else {
+        guard locationService.status != .notDetermined else {
             locationService.checkPermission()
             return
         }
+        guard locationService.status == .authorizedAlways
+                || locationService.status == .authorizedWhenInUse else { return }
         
-        guard let location = locationService.location else {
-            return
-        }
-        
+        guard let location = locationService.location else { return }
         fetchCurrentWeather(location: location)
     }
     
