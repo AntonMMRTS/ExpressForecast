@@ -13,6 +13,8 @@ class SearchPresenter: SearchPresenterProtocol {
     private(set) var router: SearchRouterProtocol!
     private(set) var interactor: SearchInteractorProtocol!
     
+    private var inputTimer: Timer?
+    
     private(set) var cities: [Weather]  = [] {
         didSet {
             view.updateView()
@@ -42,6 +44,19 @@ class SearchPresenter: SearchPresenterProtocol {
     func addCityToDatabase(city: Weather) {
         delegate?.addCity(city: city)
         interactor.addCityToDatabase(city: city)
+    }
+    
+    func searchTextFieldDidChange(text: String) {
+        inputTimer?.invalidate()
+        
+        guard text.count > 2 else {
+            inputTimer?.invalidate()
+            return }
+//            clearBills()
+//            view.configureProcessedBackgroundView()
+            inputTimer = Timer.scheduledTimer(withTimeInterval: 2, repeats: false, block: { [weak self] _ in
+                self?.interactor.searchCity(text: text)
+            })
     }
 }
 

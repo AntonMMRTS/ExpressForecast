@@ -57,12 +57,10 @@ class SearchViewController: UIViewController, SearchViewProtocol {
     
     // MARK: - MainViewProtocol Methods
     func configureView() {
-        title = "sfsdfsf"
         searchTextfield.delegate = self
         citiesTableView.delegate = self
         citiesTableView.dataSource = self
         searchTextfield.becomeFirstResponder()
-        view.backgroundColor = .red
         initializeHideKeyboard()
         configure()
     }
@@ -101,12 +99,19 @@ class SearchViewController: UIViewController, SearchViewProtocol {
         ])
         
         backButton.addTarget(self, action: #selector(backButtonDidTap), for: .touchUpInside)
+        searchTextfield.addTarget(self, action: #selector(searchTextfieldChanged), for: .editingChanged)
         navigationItemSettings()
     }
     
     private func navigationItemSettings() {
         navigationController?.setNavigationBarHidden(true, animated: false)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+    }
+    
+    @objc
+    private func searchTextfieldChanged(_ sender: UITextField) {
+        guard let text = sender.text, !text.isEmpty else { return }
+        presenter.searchTextFieldDidChange(text: text)
     }
     
     @objc
@@ -132,6 +137,8 @@ class SearchViewController: UIViewController, SearchViewProtocol {
         
         presenter.searchCity(text: text)
     }
+    
+    
 }
 
 extension SearchViewController: UITextFieldDelegate {

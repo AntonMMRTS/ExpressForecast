@@ -53,6 +53,8 @@ class MainViewController: UIViewController, MainViewProtocol {
         citiesCollectionView.register(MainCell.self,
                                         forCellWithReuseIdentifier: MainCell.identifier)
         
+        citiesCollectionView.backgroundView = UIImageView(image: UIImage(named: "clear"))
+        
         citiesCollectionView.delegate = self
         citiesCollectionView.dataSource = self
         

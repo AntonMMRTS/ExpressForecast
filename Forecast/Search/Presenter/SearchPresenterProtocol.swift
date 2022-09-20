@@ -17,6 +17,7 @@ protocol SearchPresenterProtocol: AnyObject {
     func backToMainScreen()
     func searchCity(text: String)
     func addCityToDatabase(city: Weather)
+    func searchTextFieldDidChange(text: String)
 }
 
 protocol SearchPresenterInteractionProtocol: AnyObject {

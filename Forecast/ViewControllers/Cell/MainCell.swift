@@ -67,9 +67,17 @@ class MainCell: UICollectionViewCell {
         return humidityLabelValue
     }()
     
+    let imageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "clear")
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        contentView.addSubview(imageView)
         contentView.addSubview(cityLabel)
         contentView.addSubview(temperatureLabel)
     }
@@ -87,18 +95,28 @@ class MainCell: UICollectionViewCell {
         cityLabel.text = city.name
         
         guard let main = city.main else { return }
+        configureImageView(id: city.weather.first?.id)
         let degrees = Int(main.temp) - 273
         temperatureLabel.text = "\(degrees)°C"
         humidityLabelValue.text = "\(main.humidity)%"
         pressureLabelValue.text = "\(main.pressure) гПа"
     }
     
+    private func configureImageView(id: Int?) {
+        guard let id = id else {
+            imageView.image = UIImage(named: "clear")
+            return }
+        
+        if (0..<501).contains(id) {
+            imageView.image = UIImage(named: "rain")
+        } else if id > 801 {
+            imageView.image = UIImage(named: "cloud")
+        } else {
+            imageView.image = UIImage(named: "clear")
+        }
+    }
+    
     private func autolayoutSetup() {
-        contentView.backgroundColor = .orange
-//        cityLabel.text = "sdgsdgsgdsdgsdg dfgdfgdfg"
-//        temperatureLabel.text = "34°C"
-//        humidityLabelValue.text = "56%"
-//        pressureLabelValue.text = "760 гПа"
         
         let pressureView = UIView()
         pressureView.translatesAutoresizingMaskIntoConstraints = false
@@ -118,6 +136,11 @@ class MainCell: UICollectionViewCell {
         contentView.addSubview(stack)
         
         NSLayoutConstraint.activate([
+            imageView.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor),
+            imageView.bottomAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.bottomAnchor),
+            imageView.topAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.topAnchor),
+            
             cityLabel.leadingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.leadingAnchor, constant: 10),
             cityLabel.trailingAnchor.constraint(equalTo: contentView.safeAreaLayoutGuide.trailingAnchor, constant: 10),
             cityLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
