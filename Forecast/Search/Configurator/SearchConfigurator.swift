@@ -17,9 +17,11 @@ class SearchConfigurator: SearchConfiguratorProtocol {
     
     func configure(viewController: SearchViewController) {
         let currentWeatherNetworkService = container.resolve(CurrentWeatherNetworkServiceProtocol.self)!
+        let databaseService = container.resolve(DatabaseServiceProtocol.self)!
         
         let router = SearchRouter(container: container, viewController: viewController)
-        let interactor = SearchInteractor(currentWeatherNetworkService: currentWeatherNetworkService)
+        let interactor = SearchInteractor(currentWeatherNetworkService: currentWeatherNetworkService,
+                                          databaseService: databaseService)
         let presenter = SearchPresenter(router: router, interactor: interactor)
         
         presenter.view = viewController

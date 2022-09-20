@@ -32,9 +32,10 @@ class SearchViewController: UIViewController, SearchViewProtocol {
     private let searchTextfield: UITextField = {
         let searchTextfield = UITextField()
         searchTextfield.returnKeyType = .search
-        searchTextfield.font = UIFont(name: "HelveticaNeue-Medium", size: 14)
+        searchTextfield.font = UIFont(name: "HelveticaNeue-Medium", size: 18)
         searchTextfield.autocapitalizationType = .words
         searchTextfield.backgroundColor = .white
+        searchTextfield.textColor = .black
         searchTextfield.clearButtonMode = .always
         searchTextfield.translatesAutoresizingMaskIntoConstraints = false
         return searchTextfield
@@ -150,10 +151,10 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         let city = presenter.cities[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: SearchCell.identifier, for: indexPath) as! SearchCell
         cell.configure(city: city) {
-            print("sdsdfsdfsdfgsdfsdgfsdg")
+            self.presenter.addCityToDatabase(city: city)
+            print("Added city")
         }
         return cell
     }
-    
-    
 }
+

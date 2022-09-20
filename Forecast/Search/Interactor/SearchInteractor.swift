@@ -10,11 +10,14 @@ import Foundation
 class SearchInteractor: SearchInteractorProtocol {
     // MARK: - Dependency Injection
     private var currentWeatherNetworkService: CurrentWeatherNetworkServiceProtocol!
+    private var databaseService: DatabaseServiceProtocol!
     
     weak var presenter: SearchPresenterInteractionProtocol!
     
-    init(currentWeatherNetworkService: CurrentWeatherNetworkServiceProtocol) {
+    init(currentWeatherNetworkService: CurrentWeatherNetworkServiceProtocol,
+         databaseService: DatabaseServiceProtocol!) {
         self.currentWeatherNetworkService = currentWeatherNetworkService
+        self.databaseService = databaseService
     }
     
     func searchCity(text: String) {
@@ -24,9 +27,14 @@ class SearchInteractor: SearchInteractorProtocol {
             switch result {
             case .success(let response):
                 self?.presenter.succeccedFetchCurrentWeather(response: response)
-            case .failure(let error):
+            case .failure:
                 self?.presenter.failureRequest()
             }
         }
     }
+    
+    func addCityToDatabase(city: Weather) {
+        databaseService.addNewCity(city: city)
+    }
 }
+

@@ -84,11 +84,13 @@ class MainCell: UICollectionViewCell {
     }
     
     func configure(city: Weather) {
-        let degrees = Int(city.main.temp) - 273
         cityLabel.text = city.name
+        
+        guard let main = city.main else { return }
+        let degrees = Int(main.temp) - 273
         temperatureLabel.text = "\(degrees)°C"
-        humidityLabelValue.text = "\(city.main.humidity)%"
-        pressureLabelValue.text = "\(city.main.pressure) гПа"
+        humidityLabelValue.text = "\(main.humidity)%"
+        pressureLabelValue.text = "\(main.pressure) гПа"
     }
     
     private func autolayoutSetup() {

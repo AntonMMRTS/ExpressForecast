@@ -4,7 +4,6 @@
 //
 //  Created by Антон Усов on 19.09.2022.
 //
-
 import Foundation
 
 protocol SearchPresenterProtocol: AnyObject {
@@ -17,6 +16,7 @@ protocol SearchPresenterProtocol: AnyObject {
     func configureView()
     func backToMainScreen()
     func searchCity(text: String)
+    func addCityToDatabase(city: Weather)
 }
 
 protocol SearchPresenterInteractionProtocol: AnyObject {

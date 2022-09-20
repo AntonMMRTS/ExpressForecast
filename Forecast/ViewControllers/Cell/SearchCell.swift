@@ -24,6 +24,7 @@ class SearchCell: UITableViewCell {
     
     private let actionButton: UIButton = {
         let actionButton = UIButton()
+        actionButton.setImage(UIImage(named: "addIcon"), for: .normal)
         actionButton.translatesAutoresizingMaskIntoConstraints = false
         return actionButton
     }()
@@ -47,7 +48,6 @@ class SearchCell: UITableViewCell {
         
         self.completion = completion
         actionButton.addTarget(self, action: #selector(actionButtonDidTap), for: .touchUpInside)
-//        actionButton.setImage(buttonImage, for: .normal)
     }
     
     func configureView() {

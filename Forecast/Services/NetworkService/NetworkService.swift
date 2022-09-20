@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import RealmSwift
 
 class NetworkService: NetworkServiceProtocol {
     
@@ -39,19 +40,29 @@ extension NetworkService: CurrentWeatherNetworkServiceProtocol {
 }
 
 
-struct Weather: Decodable {
-    let weather: [Description]
-    let main: Main
-    let name: String
+class Weather: Object, Decodable {
+    var weather = List<Description>()
+    @objc dynamic var main: Main? = Main()
+    @objc dynamic var name: String = ""
 }
 
-struct Main: Decodable {
-    let temp: Double
-    let pressure: Int
-    let humidity: Int
+class Main: Object, Decodable {
+    @objc dynamic var temp: Double = 0
+    @objc dynamic var pressure: Int = 0
+    @objc dynamic var humidity: Int = 0
 }
 
-struct Description: Decodable {
-    let main: String
-    let id: Int
+class Description: Object, Decodable {
+    @objc dynamic var main: String = ""
+    @objc dynamic var id: Int = 0
 }
+
+extension List : Decodable where Element : Decodable {
+    public convenience init(from decoder: Decoder) throws {
+        self.init()
+        var container = try decoder.unkeyedContainer()
+        while !container.isAtEnd {
+            let element = try container.decode(Element.self)
+            self.append(element)
+        }
+    } }

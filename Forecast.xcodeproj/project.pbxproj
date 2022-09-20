@@ -25,6 +25,12 @@
 		F30F734128D8C5A3002BE901 /* SearchConfiguratorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F734028D8C5A3002BE901 /* SearchConfiguratorProtocol.swift */; };
 		F30F734328D8C5E3002BE901 /* SearchConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F734228D8C5E3002BE901 /* SearchConfigurator.swift */; };
 		F30F734528D8E2F6002BE901 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30F734428D8E2F6002BE901 /* SearchCell.swift */; };
+		F314C4CF28D98AFD0030FD01 /* RealmSwift.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F314C4CE28D98AFD0030FD01 /* RealmSwift.xcframework */; };
+		F314C4D028D98AFD0030FD01 /* RealmSwift.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F314C4CE28D98AFD0030FD01 /* RealmSwift.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F314C4D228D98B090030FD01 /* Realm.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = F314C4D128D98B090030FD01 /* Realm.xcframework */; };
+		F314C4D328D98B090030FD01 /* Realm.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F314C4D128D98B090030FD01 /* Realm.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F314C4D628D98C8D0030FD01 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F314C4D528D98C8D0030FD01 /* DatabaseService.swift */; };
+		F314C4D828D98CBB0030FD01 /* DatabaseServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F314C4D728D98CBB0030FD01 /* DatabaseServiceProtocol.swift */; };
 		F36594C028D745130075F879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36594BF28D745130075F879 /* AppDelegate.swift */; };
 		F36594C228D745130075F879 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36594C128D745130075F879 /* SceneDelegate.swift */; };
 		F36594C428D745130075F879 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36594C328D745130075F879 /* MainViewController.swift */; };
@@ -56,6 +62,8 @@
 			dstSubfolderSpec = 10;
 			files = (
 				F30F732128D830A7002BE901 /* Alamofire.xcframework in Embed Frameworks */,
+				F314C4D328D98B090030FD01 /* Realm.xcframework in Embed Frameworks */,
+				F314C4D028D98AFD0030FD01 /* RealmSwift.xcframework in Embed Frameworks */,
 				F30F731D28D82CCE002BE901 /* Swinject.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -81,6 +89,10 @@
 		F30F734028D8C5A3002BE901 /* SearchConfiguratorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConfiguratorProtocol.swift; sourceTree = "<group>"; };
 		F30F734228D8C5E3002BE901 /* SearchConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchConfigurator.swift; sourceTree = "<group>"; };
 		F30F734428D8E2F6002BE901 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		F314C4CE28D98AFD0030FD01 /* RealmSwift.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = RealmSwift.xcframework; path = Carthage/Build/RealmSwift.xcframework; sourceTree = "<group>"; };
+		F314C4D128D98B090030FD01 /* Realm.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Realm.xcframework; path = Carthage/Build/Realm.xcframework; sourceTree = "<group>"; };
+		F314C4D528D98C8D0030FD01 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		F314C4D728D98CBB0030FD01 /* DatabaseServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseServiceProtocol.swift; sourceTree = "<group>"; };
 		F36594BF28D745130075F879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F36594C128D745130075F879 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F36594C328D745130075F879 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +123,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F30F732028D830A7002BE901 /* Alamofire.xcframework in Frameworks */,
+				F314C4D228D98B090030FD01 /* Realm.xcframework in Frameworks */,
+				F314C4CF28D98AFD0030FD01 /* RealmSwift.xcframework in Frameworks */,
 				F30F731C28D82CCE002BE901 /* Swinject.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,6 +135,8 @@
 		F30F731A28D82CCE002BE901 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F314C4D128D98B090030FD01 /* Realm.xcframework */,
+				F314C4CE28D98AFD0030FD01 /* RealmSwift.xcframework */,
 				F30F731F28D830A7002BE901 /* Alamofire.xcframework */,
 				F30F731B28D82CCE002BE901 /* Swinject.xcframework */,
 			);
@@ -199,6 +215,15 @@
 				F30F734228D8C5E3002BE901 /* SearchConfigurator.swift */,
 			);
 			path = Configurator;
+			sourceTree = "<group>";
+		};
+		F314C4D428D98C6C0030FD01 /* DatabaseServer */ = {
+			isa = PBXGroup;
+			children = (
+				F314C4D528D98C8D0030FD01 /* DatabaseService.swift */,
+				F314C4D728D98CBB0030FD01 /* DatabaseServiceProtocol.swift */,
+			);
+			path = DatabaseServer;
 			sourceTree = "<group>";
 		};
 		F36594B328D745130075F879 = {
@@ -296,6 +321,7 @@
 		F3D8BC3328D75B6C00B625EF /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				F314C4D428D98C6C0030FD01 /* DatabaseServer */,
 				F30F732228D83AD9002BE901 /* LocationService */,
 				F3D8BC3628D7671B00B625EF /* NetworkService */,
 				F3D8BC3428D75B8100B625EF /* StartAppService */,
@@ -410,6 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F314C4D628D98C8D0030FD01 /* DatabaseService.swift in Sources */,
 				F30F733528D8C3D2002BE901 /* SearchPresenterProtocol.swift in Sources */,
 				F30F734528D8E2F6002BE901 /* SearchCell.swift in Sources */,
 				F3D8BC3D28D769E800B625EF /* CurrentWeatherNetworkService.swift in Sources */,
@@ -426,6 +453,7 @@
 				F3D8BC2528D750E600B625EF /* MainRouter.swift in Sources */,
 				F3D8BC1F28D7500C00B625EF /* MainInteractorProtocol.swift in Sources */,
 				F30F732B28D8C30D002BE901 /* SearchViewController.swift in Sources */,
+				F314C4D828D98CBB0030FD01 /* DatabaseServiceProtocol.swift in Sources */,
 				F30F733D28D8C50A002BE901 /* SearchInteractorProtocol.swift in Sources */,
 				F30F733328D8C39B002BE901 /* SearchViewProtocol.swift in Sources */,
 				F30F732628D83F5D002BE901 /* LocationServiceProtocol.swift in Sources */,

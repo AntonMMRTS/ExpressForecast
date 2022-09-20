@@ -12,13 +12,16 @@ class MainInteractor: MainInteractorProtocol {
     // MARK: - Dependency Injection
     private var currentWeatherNetworkService: CurrentWeatherNetworkServiceProtocol!
     private var locationService: LocationServiceProtocol!
+    private var databaseService: DatabaseServiceProtocol!
     
     weak var presenter: MainPresenterInteractionProtocol!
     
     init(currentWeatherNetworkService: CurrentWeatherNetworkServiceProtocol,
-         locationService: LocationServiceProtocol) {
+         locationService: LocationServiceProtocol,
+         databaseService: DatabaseServiceProtocol!) {
         self.currentWeatherNetworkService = currentWeatherNetworkService
         self.locationService = locationService
+        self.databaseService = databaseService
     }
     
     
@@ -47,6 +50,10 @@ class MainInteractor: MainInteractorProtocol {
                 self?.presenter.failureRequest()
             }
         }
+    }
+    
+    func fetchCitiesFromDatabase() -> [Weather] {
+        databaseService.fetchCities()
     }
 }
 

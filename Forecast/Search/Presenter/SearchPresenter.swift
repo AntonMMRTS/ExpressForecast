@@ -35,6 +35,10 @@ class SearchPresenter: SearchPresenterProtocol {
     func searchCity(text: String) {
         interactor.searchCity(text: text)
     }
+    
+    func addCityToDatabase(city: Weather) {
+        interactor.addCityToDatabase(city: city)
+    }
 }
 
 extension SearchPresenter: SearchPresenterInteractionProtocol {

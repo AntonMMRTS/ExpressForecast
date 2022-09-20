@@ -11,4 +11,5 @@ protocol SearchInteractorProtocol: AnyObject {
     var presenter: SearchPresenterInteractionProtocol! { get }
     
     func searchCity(text: String)
+    func addCityToDatabase(city: Weather)
 }
