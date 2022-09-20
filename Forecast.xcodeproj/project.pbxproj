@@ -32,6 +32,9 @@
 		F314C4D628D98C8D0030FD01 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F314C4D528D98C8D0030FD01 /* DatabaseService.swift */; };
 		F314C4D828D98CBB0030FD01 /* DatabaseServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F314C4D728D98CBB0030FD01 /* DatabaseServiceProtocol.swift */; };
 		F314C4DB28D9A2F60030FD01 /* SearchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F314C4DA28D9A2F60030FD01 /* SearchDelegate.swift */; };
+		F314C4DE28D9F6270030FD01 /* ReachabilityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F314C4DD28D9F6270030FD01 /* ReachabilityService.swift */; };
+		F314C4E028D9F7350030FD01 /* ReachabilityServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F314C4DF28D9F7350030FD01 /* ReachabilityServiceProtocol.swift */; };
+		F314C4E328DA0E9E0030FD01 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F314C4E228DA0E9E0030FD01 /* BackgroundView.swift */; };
 		F36594C028D745130075F879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36594BF28D745130075F879 /* AppDelegate.swift */; };
 		F36594C228D745130075F879 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36594C128D745130075F879 /* SceneDelegate.swift */; };
 		F36594C428D745130075F879 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36594C328D745130075F879 /* MainViewController.swift */; };
@@ -95,6 +98,9 @@
 		F314C4D528D98C8D0030FD01 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		F314C4D728D98CBB0030FD01 /* DatabaseServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseServiceProtocol.swift; sourceTree = "<group>"; };
 		F314C4DA28D9A2F60030FD01 /* SearchDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDelegate.swift; sourceTree = "<group>"; };
+		F314C4DD28D9F6270030FD01 /* ReachabilityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityService.swift; sourceTree = "<group>"; };
+		F314C4DF28D9F7350030FD01 /* ReachabilityServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityServiceProtocol.swift; sourceTree = "<group>"; };
+		F314C4E228DA0E9E0030FD01 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		F36594BF28D745130075F879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F36594C128D745130075F879 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F36594C328D745130075F879 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -219,13 +225,13 @@
 			path = Configurator;
 			sourceTree = "<group>";
 		};
-		F314C4D428D98C6C0030FD01 /* DatabaseServer */ = {
+		F314C4D428D98C6C0030FD01 /* DatabaseService */ = {
 			isa = PBXGroup;
 			children = (
 				F314C4D528D98C8D0030FD01 /* DatabaseService.swift */,
 				F314C4D728D98CBB0030FD01 /* DatabaseServiceProtocol.swift */,
 			);
-			path = DatabaseServer;
+			path = DatabaseService;
 			sourceTree = "<group>";
 		};
 		F314C4D928D9A2D60030FD01 /* Delegate */ = {
@@ -234,6 +240,23 @@
 				F314C4DA28D9A2F60030FD01 /* SearchDelegate.swift */,
 			);
 			path = Delegate;
+			sourceTree = "<group>";
+		};
+		F314C4DC28D9F5FE0030FD01 /* ReachabilityService */ = {
+			isa = PBXGroup;
+			children = (
+				F314C4DD28D9F6270030FD01 /* ReachabilityService.swift */,
+				F314C4DF28D9F7350030FD01 /* ReachabilityServiceProtocol.swift */,
+			);
+			path = ReachabilityService;
+			sourceTree = "<group>";
+		};
+		F314C4E128DA0E830030FD01 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F314C4E228DA0E9E0030FD01 /* BackgroundView.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		F36594B328D745130075F879 = {
@@ -248,6 +271,7 @@
 		F36594BE28D745130075F879 /* Forecast */ = {
 			isa = PBXGroup;
 			children = (
+				F314C4E128DA0E830030FD01 /* UI */,
 				F3D8BC3B28D7683000B625EF /* Models */,
 				F3D8BC3528D75BA000B625EF /* ViewControllers */,
 				F3D8BC3328D75B6C00B625EF /* Services */,
@@ -332,7 +356,8 @@
 		F3D8BC3328D75B6C00B625EF /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				F314C4D428D98C6C0030FD01 /* DatabaseServer */,
+				F314C4DC28D9F5FE0030FD01 /* ReachabilityService */,
+				F314C4D428D98C6C0030FD01 /* DatabaseService */,
 				F30F732228D83AD9002BE901 /* LocationService */,
 				F3D8BC3628D7671B00B625EF /* NetworkService */,
 				F3D8BC3428D75B8100B625EF /* StartAppService */,
@@ -458,9 +483,11 @@
 				F36594C428D745130075F879 /* MainViewController.swift in Sources */,
 				F3D8BC1B28D74FBA00B625EF /* MainConfiguratorProtocol.swift in Sources */,
 				F3D8BC3A28D767C200B625EF /* NetworkService.swift in Sources */,
+				F314C4DE28D9F6270030FD01 /* ReachabilityService.swift in Sources */,
 				F3D8BC3828D767B300B625EF /* NetworkServiceProtocol.swift in Sources */,
 				F3D8BC2328D750B200B625EF /* MainRouterProtocol.swift in Sources */,
 				F36594C028D745130075F879 /* AppDelegate.swift in Sources */,
+				F314C4E328DA0E9E0030FD01 /* BackgroundView.swift in Sources */,
 				F36594D928D747FC0075F879 /* ServiceRegister.swift in Sources */,
 				F3D8BC2528D750E600B625EF /* MainRouter.swift in Sources */,
 				F3D8BC1F28D7500C00B625EF /* MainInteractorProtocol.swift in Sources */,
@@ -472,6 +499,7 @@
 				F3D8BC2928D7512000B625EF /* MainPresenter.swift in Sources */,
 				F3D8BC3128D7569C00B625EF /* StartAppServiceProtocol.swift in Sources */,
 				F30F732928D868BC002BE901 /* MainCell.swift in Sources */,
+				F314C4E028D9F7350030FD01 /* ReachabilityServiceProtocol.swift in Sources */,
 				F36594C228D745130075F879 /* SceneDelegate.swift in Sources */,
 				F3D8BC2B28D7514200B625EF /* MainViewProtocol.swift in Sources */,
 				F30F733728D8C423002BE901 /* SearchPresenter.swift in Sources */,

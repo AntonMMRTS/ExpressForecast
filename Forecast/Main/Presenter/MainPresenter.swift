@@ -26,7 +26,18 @@ class MainPresenter: MainPresenterProtocol {
     }
     
     func configureView() {
-//        interactor.fetchCurrentWeather()
+        interactor.checkConection { isConection in
+            if !isConection {
+                DispatchQueue.main.async {
+                    let title = "Отсутствует подключение к интернету"
+                    self.router.presentAlert(title: title)
+                }
+               
+            } else {
+                self.interactor.fetchCurrentWeather()
+            }
+        }
+      
         cities = interactor.fetchCitiesFromDatabase().reversed()
         view.configureView()
     }
@@ -51,14 +62,13 @@ extension MainPresenter: MainPresenterInteractionProtocol {
         if let index = cities.firstIndex(where: { $0.name == response.name }) {
             interactor.deleteCityFromDatabase(city: cities[index])
             cities.remove(at: index)
-           
         }
         cities.insert(response, at: 0)
         interactor.addCityToDatabase(city: response)
     }
     
     func failureRequest() {
-        router.presentAlert()
+        router.presentAlert(title: "Что то пошло не так")
     }
 }
 

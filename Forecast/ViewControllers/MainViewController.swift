@@ -31,7 +31,6 @@ class MainViewController: UIViewController, MainViewProtocol {
 
     // MARK: - MainViewProtocol Methods
     func configureView() {
-        title = "sfsdfsf"
         view.backgroundColor = .white
         configureCollectionView()
         configureNavigationBar()
@@ -39,6 +38,11 @@ class MainViewController: UIViewController, MainViewProtocol {
     
     func updateView() {
         guard let citiesCollectionView = citiesCollectionView else { return }
+        if presenter.cities.isEmpty {
+            citiesCollectionView.backgroundView = BackgroundView()
+        } else {
+            citiesCollectionView.backgroundView = nil
+        }
         citiesCollectionView.reloadData()
     }
     
@@ -53,7 +57,8 @@ class MainViewController: UIViewController, MainViewProtocol {
         citiesCollectionView.register(MainCell.self,
                                         forCellWithReuseIdentifier: MainCell.identifier)
         
-        citiesCollectionView.backgroundView = UIImageView(image: UIImage(named: "clear"))
+//        citiesCollectionView.backgroundView = UIImageView(image: UIImage(named: "clear"))
+        citiesCollectionView.backgroundView = BackgroundView()
         
         citiesCollectionView.delegate = self
         citiesCollectionView.dataSource = self

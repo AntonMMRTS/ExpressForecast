@@ -28,10 +28,9 @@ class MainRouter: MainRouterProtocol {
         nc.pushViewController(vc, animated: true)
     }
     
-    func presentAlert() {
-        let alert = UIAlertController(title: "Что то пошло не так",
-                                      message: nil
-                                      ,
+    func presentAlert(title: String) {
+        let alert = UIAlertController(title: title,
+                                      message: nil ,
                                       preferredStyle: .alert)
         let button = UIAlertAction(title: "OK",
                                    style: .default,

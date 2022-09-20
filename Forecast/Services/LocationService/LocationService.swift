@@ -19,7 +19,6 @@ class LocationService: NSObject, CLLocationManagerDelegate, LocationServiceProto
     var location: CLLocation?
     var isLocation: Bool = false
     var isPermission = false
-    var loading = false
     
     override init() {
         super.init()
@@ -27,15 +26,12 @@ class LocationService: NSObject, CLLocationManagerDelegate, LocationServiceProto
         manager = CLLocationManager()
         manager?.delegate = self
         manager?.desiredAccuracy = kCLLocationAccuracyBest
-        manager?.startUpdatingLocation()
+        manager?.startMonitoringSignificantLocationChanges()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.first, !loading else { return }
+        guard let location = locations.first else { return }
         
-        loading = true
-        manager.stopUpdatingLocation()
-        self.manager?.stopUpdatingLocation()
         delegate.updateLocation(location: location)
     }
     

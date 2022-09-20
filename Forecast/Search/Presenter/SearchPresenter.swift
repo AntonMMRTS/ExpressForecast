@@ -52,8 +52,6 @@ class SearchPresenter: SearchPresenterProtocol {
         guard text.count > 2 else {
             inputTimer?.invalidate()
             return }
-//            clearBills()
-//            view.configureProcessedBackgroundView()
             inputTimer = Timer.scheduledTimer(withTimeInterval: 2, repeats: false, block: { [weak self] _ in
                 self?.interactor.searchCity(text: text)
             })

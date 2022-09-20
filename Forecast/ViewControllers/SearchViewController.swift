@@ -52,6 +52,7 @@ class SearchViewController: UIViewController, SearchViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
        
+        view.backgroundColor = .systemGray5
         presenter.configureView()
     }
     
@@ -137,8 +138,6 @@ class SearchViewController: UIViewController, SearchViewProtocol {
         
         presenter.searchCity(text: text)
     }
-    
-    
 }
 
 extension SearchViewController: UITextFieldDelegate {
@@ -159,7 +158,6 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: SearchCell.identifier, for: indexPath) as! SearchCell
         cell.configure(city: city) {
             self.presenter.addCityToDatabase(city: city)
-            print("Added city")
         }
         return cell
     }

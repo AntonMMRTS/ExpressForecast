@@ -14,4 +14,5 @@ protocol MainInteractorProtocol: AnyObject {
     func fetchCitiesFromDatabase() -> [Weather]
     func addCityToDatabase(city: Weather)
     func deleteCityFromDatabase(city: Weather)
+    func checkConection(completion: @escaping (Bool) -> Void)
 }

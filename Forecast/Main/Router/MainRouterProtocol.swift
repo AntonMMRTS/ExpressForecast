@@ -10,5 +10,5 @@ import Foundation
 protocol MainRouterProtocol: AnyObject {
     
     func pushSearchScreen(delegate: SearchDelegate)
-    func presentAlert()
+    func presentAlert(title: String) 
 }

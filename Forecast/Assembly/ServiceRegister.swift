@@ -18,6 +18,7 @@ class ServiceRegister {
         registerNetworkService(for: container)
         registerLocationService(for: container)
         registerDatabaseService(for: container)
+        registerReachabilityService(for: container)
         registerModules(for: container)
     }
     
@@ -48,6 +49,13 @@ class ServiceRegister {
         let databaseService = DatabaseService()
         container.register(DatabaseServiceProtocol.self) { _ in
             return databaseService
+        }.inObjectScope(.container)
+    }
+    
+    private class func registerReachabilityService(for container: Container) {
+        let reachabilityService = ReachabilityService()
+        container.register(ReachabilityServiceProtocol.self) { _ in
+            return reachabilityService
         }.inObjectScope(.container)
     }
 }

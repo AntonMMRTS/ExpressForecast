@@ -19,11 +19,13 @@ class MainConfigurator: MainConfiguratorProtocol {
         let currentWeatherNetworkService = container.resolve(CurrentWeatherNetworkServiceProtocol.self)!
         var locationService = container.resolve(LocationServiceProtocol.self)!
         let databaseService = container.resolve(DatabaseServiceProtocol.self)!
+        let reachabilityService = container.resolve(ReachabilityServiceProtocol.self)!
         
         let router = MainRouter(container: container, viewController: viewController)
         let interactor = MainInteractor(currentWeatherNetworkService: currentWeatherNetworkService,
                                         locationService: locationService,
-                                        databaseService: databaseService)
+                                        databaseService: databaseService,
+                                        reachabilityService: reachabilityService)
         let presenter = MainPresenter(router: router, interactor: interactor)
         
         locationService.delegate = interactor

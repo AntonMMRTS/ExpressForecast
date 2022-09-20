@@ -13,15 +13,18 @@ class MainInteractor: MainInteractorProtocol {
     private var currentWeatherNetworkService: CurrentWeatherNetworkServiceProtocol!
     private var locationService: LocationServiceProtocol!
     private var databaseService: DatabaseServiceProtocol!
+    private var reachabilityService: ReachabilityServiceProtocol!
     
     weak var presenter: MainPresenterInteractionProtocol!
     
     init(currentWeatherNetworkService: CurrentWeatherNetworkServiceProtocol,
          locationService: LocationServiceProtocol,
-         databaseService: DatabaseServiceProtocol!) {
+         databaseService: DatabaseServiceProtocol!,
+         reachabilityService: ReachabilityServiceProtocol) {
         self.currentWeatherNetworkService = currentWeatherNetworkService
         self.locationService = locationService
         self.databaseService = databaseService
+        self.reachabilityService = reachabilityService
     }
     
     
@@ -62,6 +65,10 @@ class MainInteractor: MainInteractorProtocol {
     
     func deleteCityFromDatabase(city: Weather) {
         databaseService.deleteCity(city: city)
+    }
+    
+    func checkConection(completion: @escaping (Bool) -> Void) {
+        reachabilityService.checkConection(completion: completion)
     }
 }
 
