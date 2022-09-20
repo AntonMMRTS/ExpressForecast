@@ -1,5 +1,6 @@
 github "Swinject/Swinject"
 github "Alamofire/Alamofire"
+github "realm/realm-swift"
 
 # Uncomment if you use SwinjectStoryboard
 # github "Swinject/SwinjectStoryboard"
