@@ -13,7 +13,11 @@ class MainPresenter: MainPresenterProtocol {
     private(set) var router: MainRouterProtocol!
     private(set) var interactor: MainInteractorProtocol!
     
-    private(set) var cities: [Weather]  = []
+    private(set) var cities: [Weather]  = [] {
+        didSet {
+            view.updateView()
+        }
+    }
     
     init(router: MainRouterProtocol,
          interactor: MainInteractorProtocol) {
@@ -22,13 +26,23 @@ class MainPresenter: MainPresenterProtocol {
     }
     
     func configureView() {
-        interactor.fetchCurrentWeather()
-        cities = interactor.fetchCitiesFromDatabase()
+//        interactor.fetchCurrentWeather()
+        cities = interactor.fetchCitiesFromDatabase().reversed()
         view.configureView()
     }
     
     func pushSearchScreen() {
-        router.pushSearchScreen()
+        router.pushSearchScreen(delegate: self)
+    }
+}
+
+extension MainPresenter: SearchDelegate {
+    func addCity(city: Weather) {
+        if let index = cities.firstIndex(where: { $0.name == city.name }) {
+            interactor.deleteCityFromDatabase(city: cities[index])
+            cities.remove(at: index)
+        }
+        cities.insert(city, at: 0)
     }
 }
 
@@ -41,10 +55,10 @@ extension MainPresenter: MainPresenterInteractionProtocol {
         }
         cities.insert(response, at: 0)
         interactor.addCityToDatabase(city: response)
-        view.updateView()
     }
     
     func failureRequest() {
         router.presentAlert()
     }
 }
+

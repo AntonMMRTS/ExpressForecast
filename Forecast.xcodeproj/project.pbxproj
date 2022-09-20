@@ -31,6 +31,7 @@
 		F314C4D328D98B090030FD01 /* Realm.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F314C4D128D98B090030FD01 /* Realm.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F314C4D628D98C8D0030FD01 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F314C4D528D98C8D0030FD01 /* DatabaseService.swift */; };
 		F314C4D828D98CBB0030FD01 /* DatabaseServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F314C4D728D98CBB0030FD01 /* DatabaseServiceProtocol.swift */; };
+		F314C4DB28D9A2F60030FD01 /* SearchDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F314C4DA28D9A2F60030FD01 /* SearchDelegate.swift */; };
 		F36594C028D745130075F879 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36594BF28D745130075F879 /* AppDelegate.swift */; };
 		F36594C228D745130075F879 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36594C128D745130075F879 /* SceneDelegate.swift */; };
 		F36594C428D745130075F879 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36594C328D745130075F879 /* MainViewController.swift */; };
@@ -93,6 +94,7 @@
 		F314C4D128D98B090030FD01 /* Realm.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Realm.xcframework; path = Carthage/Build/Realm.xcframework; sourceTree = "<group>"; };
 		F314C4D528D98C8D0030FD01 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		F314C4D728D98CBB0030FD01 /* DatabaseServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseServiceProtocol.swift; sourceTree = "<group>"; };
+		F314C4DA28D9A2F60030FD01 /* SearchDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDelegate.swift; sourceTree = "<group>"; };
 		F36594BF28D745130075F879 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F36594C128D745130075F879 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F36594C328D745130075F879 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -226,6 +228,14 @@
 			path = DatabaseServer;
 			sourceTree = "<group>";
 		};
+		F314C4D928D9A2D60030FD01 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				F314C4DA28D9A2F60030FD01 /* SearchDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
 		F36594B328D745130075F879 = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +266,7 @@
 		F3D8BC1428D74F5100B625EF /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				F314C4D928D9A2D60030FD01 /* Delegate */,
 				F3D8BC1928D74F9000B625EF /* Configurator */,
 				F3D8BC1828D74F7700B625EF /* Interaktor */,
 				F3D8BC1728D74F6E00B625EF /* Router */,
@@ -440,6 +451,7 @@
 				F30F733528D8C3D2002BE901 /* SearchPresenterProtocol.swift in Sources */,
 				F30F734528D8E2F6002BE901 /* SearchCell.swift in Sources */,
 				F3D8BC3D28D769E800B625EF /* CurrentWeatherNetworkService.swift in Sources */,
+				F314C4DB28D9A2F60030FD01 /* SearchDelegate.swift in Sources */,
 				F3D8BC2D28D755B000B625EF /* DependencyContainer.swift in Sources */,
 				F30F732428D83AEF002BE901 /* LocationService.swift in Sources */,
 				F3D8BC2F28D7560F00B625EF /* StartAppService.swift in Sources */,

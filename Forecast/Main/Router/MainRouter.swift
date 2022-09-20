@@ -19,12 +19,12 @@ class MainRouter: MainRouterProtocol {
         self.viewController = viewController
     }
     
-    func pushSearchScreen() {
+    func pushSearchScreen(delegate: SearchDelegate) {
         guard let nc = viewController.navigationController,
               let searchConfigurator = container.resolve(SearchConfiguratorProtocol.self) else { return }
         
         let vc = SearchViewController()
-        searchConfigurator.configure(viewController: vc)
+        searchConfigurator.configure(viewController: vc, delegate: delegate)
         nc.pushViewController(vc, animated: true)
     }
     

@@ -38,6 +38,7 @@ class MainViewController: UIViewController, MainViewProtocol {
     }
     
     func updateView() {
+        guard let citiesCollectionView = citiesCollectionView else { return }
         citiesCollectionView.reloadData()
     }
     

@@ -9,6 +9,7 @@ import Foundation
 
 class SearchPresenter: SearchPresenterProtocol {
     weak var view: SearchViewProtocol!
+    weak var delegate: SearchDelegate?
     private(set) var router: SearchRouterProtocol!
     private(set) var interactor: SearchInteractorProtocol!
     
@@ -19,9 +20,11 @@ class SearchPresenter: SearchPresenterProtocol {
     }
     
     init(router: SearchRouterProtocol,
-         interactor: SearchInteractorProtocol) {
+         interactor: SearchInteractorProtocol,
+         delegate: SearchDelegate) {
         self.router = router
         self.interactor = interactor
+        self.delegate = delegate
     }
     
     func configureView() {
@@ -37,6 +40,7 @@ class SearchPresenter: SearchPresenterProtocol {
     }
     
     func addCityToDatabase(city: Weather) {
+        delegate?.addCity(city: city)
         interactor.addCityToDatabase(city: city)
     }
 }
@@ -44,7 +48,6 @@ class SearchPresenter: SearchPresenterProtocol {
 extension SearchPresenter: SearchPresenterInteractionProtocol {
     func succeccedFetchCurrentWeather(response: Weather) {
         self.cities.append(response)
-//        view.updateView()
     }
     
     func failureRequest() {
