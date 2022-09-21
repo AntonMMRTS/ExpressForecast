@@ -8,7 +8,7 @@
 import Foundation
 import CoreLocation
 
-class MainInteractor: MainInteractorProtocol {
+final class MainInteractor: MainInteractorProtocol {
     // MARK: - Dependency Injection
     private var currentWeatherNetworkService: CurrentWeatherNetworkServiceProtocol!
     private var locationService: LocationServiceProtocol!
@@ -27,8 +27,8 @@ class MainInteractor: MainInteractorProtocol {
         self.reachabilityService = reachabilityService
     }
     
-    
-    func fetchCurrentWeather() {
+    // MARK: - MainInteractorProtocol Methods
+    func getCurrentWeather() {
         guard locationService.status != .notDetermined else {
             locationService.checkPermission()
             return
@@ -54,15 +54,15 @@ class MainInteractor: MainInteractorProtocol {
         }
     }
     
-    func fetchCitiesFromDatabase() -> [Weather] {
+    func fetchCitiesFromDatabase() -> [City] {
         databaseService.fetchCities()
     }
     
-    func addCityToDatabase(city: Weather) {
+    func addCityToDatabase(city: City) {
         databaseService.addNewCity(city: city)
     }
     
-    func deleteCityFromDatabase(city: Weather) {
+    func deleteCityFromDatabase(city: City) {
         databaseService.deleteCity(city: city)
     }
     
@@ -71,6 +71,7 @@ class MainInteractor: MainInteractorProtocol {
     }
 }
 
+// MARK: - LocationDelegate
 extension MainInteractor: LocationDelegate {
     func updateLocation(location: CLLocation) {
         fetchCurrentWeather(location: location)

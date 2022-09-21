@@ -11,16 +11,16 @@ protocol SearchPresenterProtocol: AnyObject {
     var router: SearchRouterProtocol! { get }
     var interactor: SearchInteractorProtocol! { get }
     
-    var cities: [Weather] { get }
+    var cities: [City] { get }
     
     func configureView()
     func backToMainScreen()
     func searchCity(text: String)
-    func addCityToDatabase(city: Weather)
+    func addCityToDatabase(city: City)
     func searchTextFieldDidChange(text: String)
 }
 
 protocol SearchPresenterInteractionProtocol: AnyObject {
-    func succeccedFetchCurrentWeather(response: Weather)
+    func succeccedFetchCurrentWeather(response: City)
     func failureRequest()
 }

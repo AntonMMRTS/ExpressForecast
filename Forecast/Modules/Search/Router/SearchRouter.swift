@@ -8,7 +8,7 @@
 import UIKit
 import Swinject
 
-class SearchRouter: SearchRouterProtocol {
+final class SearchRouter: SearchRouterProtocol {
     
     // MARK: - Dependency Injection
     private weak var container: Container!
@@ -19,15 +19,16 @@ class SearchRouter: SearchRouterProtocol {
         self.viewController = viewController
     }
     
+    // MARK: - SearchRouterProtocol
     func backToMainScreen() {
         guard let nc = viewController.navigationController else { return }
         nc.popViewController(animated: true)
     }
     
     func presentAlert() {
-        let alert = UIAlertController(title: "Что то пошло не так",
-                                      message: nil
-                                      ,
+        let title = "Что то пошло не так"
+        let alert = UIAlertController(title: title,
+                                      message: nil,
                                       preferredStyle: .alert)
         let button = UIAlertAction(title: "OK",
                                    style: .default,

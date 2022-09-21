@@ -8,12 +8,13 @@
 
 import Foundation
 
-class MainPresenter: MainPresenterProtocol {
+final class MainPresenter: MainPresenterProtocol {
+    // MARK: - Dependency Injection
     weak var view: MainViewProtocol!
     private(set) var router: MainRouterProtocol!
     private(set) var interactor: MainInteractorProtocol!
     
-    private(set) var cities: [Weather]  = [] {
+    private(set) var cities: [City]  = [] {
         didSet {
             view.updateView()
         }
@@ -25,20 +26,9 @@ class MainPresenter: MainPresenterProtocol {
         self.interactor = interactor
     }
     
+    // MARK: - MainPresenterProtocol
     func configureView() {
-        interactor.checkConection { isConection in
-            if !isConection {
-                DispatchQueue.main.async {
-                    let title = "Отсутствует подключение к интернету"
-                    self.router.presentAlert(title: title)
-                }
-               
-            } else {
-                self.interactor.fetchCurrentWeather()
-            }
-        }
-      
-        cities = interactor.fetchCitiesFromDatabase().reversed()
+        configureData()
         view.configureView()
     }
     
@@ -47,8 +37,27 @@ class MainPresenter: MainPresenterProtocol {
     }
 }
 
+// MARK: - Private Methods
+private extension MainPresenter {
+    func configureData() {
+        interactor.checkConection { isConection in
+            if !isConection {
+                DispatchQueue.main.async {
+                    let title = "Отсутствует подключение к интернету"
+                    self.router.presentAlert(title: title)
+                }
+            } else {
+                self.interactor.getCurrentWeather()
+            }
+        }
+        
+        cities = interactor.fetchCitiesFromDatabase().reversed()
+    }
+}
+
+// MARK: - SearchDelegate
 extension MainPresenter: SearchDelegate {
-    func addCity(city: Weather) {
+    func addCity(city: City) {
         if let index = cities.firstIndex(where: { $0.name == city.name }) {
             interactor.deleteCityFromDatabase(city: cities[index])
             cities.remove(at: index)
@@ -57,8 +66,9 @@ extension MainPresenter: SearchDelegate {
     }
 }
 
+// MARK: - MainPresenterInteractionProtocol
 extension MainPresenter: MainPresenterInteractionProtocol {
-    func succeccedFetchCurrentWeather(response: Weather) {
+    func succeccedFetchCurrentWeather(response: City) {
         if let index = cities.firstIndex(where: { $0.name == response.name }) {
             interactor.deleteCityFromDatabase(city: cities[index])
             cities.remove(at: index)

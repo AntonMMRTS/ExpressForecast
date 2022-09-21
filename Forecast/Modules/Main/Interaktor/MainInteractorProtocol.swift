@@ -10,9 +10,9 @@ import Foundation
 protocol MainInteractorProtocol: AnyObject {
     var presenter: MainPresenterInteractionProtocol! { get }
     
-    func fetchCurrentWeather()
-    func fetchCitiesFromDatabase() -> [Weather]
-    func addCityToDatabase(city: Weather)
-    func deleteCityFromDatabase(city: Weather)
+    func getCurrentWeather()
+    func fetchCitiesFromDatabase() -> [City]
+    func addCityToDatabase(city: City)
+    func deleteCityFromDatabase(city: City)
     func checkConection(completion: @escaping (Bool) -> Void)
 }

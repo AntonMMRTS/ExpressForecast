@@ -8,5 +8,5 @@
 import Foundation
 
 protocol SearchDelegate: AnyObject {
-    func addCity(city: Weather)
+    func addCity(city: City)
 }

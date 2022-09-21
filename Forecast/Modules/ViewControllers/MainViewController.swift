@@ -8,7 +8,7 @@
 import UIKit
 import Swinject
 
-class MainViewController: UIViewController, MainViewProtocol {
+final class MainViewController: UIViewController, MainViewProtocol {
 
     // MARK: - MainViewProtocol Properties
     var presenter: MainPresenterProtocol!
@@ -33,11 +33,11 @@ class MainViewController: UIViewController, MainViewProtocol {
     func configureView() {
         view.backgroundColor = .white
         configureCollectionView()
-        configureNavigationBar()
     }
     
     func updateView() {
         guard let citiesCollectionView = citiesCollectionView else { return }
+        
         if presenter.cities.isEmpty {
             citiesCollectionView.backgroundView = BackgroundView()
         } else {
@@ -45,9 +45,11 @@ class MainViewController: UIViewController, MainViewProtocol {
         }
         citiesCollectionView.reloadData()
     }
+}
     
     // MARK: - Private Methods
-    private func configureCollectionView() {
+private extension MainViewController {
+    func configureCollectionView() {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
 
@@ -66,7 +68,7 @@ class MainViewController: UIViewController, MainViewProtocol {
         autolayoutSetup()
     }
     
-    private func autolayoutSetup() {
+    func autolayoutSetup() {
         guard let citiesCollectionView = citiesCollectionView else { return }
         
         view.addSubview(citiesCollectionView)
@@ -79,18 +81,19 @@ class MainViewController: UIViewController, MainViewProtocol {
         ])
     }
     
-    private func configureNavigationBar() {
+    func configureNavigationBar() {
         navigationController?.setNavigationBarHidden(false, animated: false)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         
-        let searchButton = UIBarButtonItem(image: UIImage(named: "searchIcon"),
+        let searchButton = UIBarButtonItem(image: .searchIcon,
                                          style: .plain,
                                          target: self,
                                          action: #selector(searchButtonDidTap))
         navigationItem.rightBarButtonItem = searchButton
     }
     
-    @objc func searchButtonDidTap() {
+    @objc
+    func searchButtonDidTap() {
         presenter.pushSearchScreen()
     }
 }
@@ -99,7 +102,6 @@ class MainViewController: UIViewController, MainViewProtocol {
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         presenter.cities.count
-//        1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

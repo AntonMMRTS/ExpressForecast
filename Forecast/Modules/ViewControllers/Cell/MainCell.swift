@@ -7,69 +7,69 @@
 
 import UIKit
 
-class MainCell: UICollectionViewCell {
+final class MainCell: UICollectionViewCell {
     static let identifier = "MainCell"
     
-    let cityLabel: UILabel = {
+    private let cityLabel: UILabel = {
         let cityLabel = UILabel()
         cityLabel.textColor = .white
-        cityLabel.font = UIFont(name: "HelveticaNeue-Medium", size: 42)
+        cityLabel.font = .helveticaNeueMedium42
         cityLabel.textAlignment = .center
         cityLabel.numberOfLines = 0
         cityLabel.translatesAutoresizingMaskIntoConstraints = false
         return cityLabel
     }()
     
-    let temperatureLabel: UILabel = {
+    private let temperatureLabel: UILabel = {
         let temperatureLabel = UILabel()
         temperatureLabel.textColor = .white
-        temperatureLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 100)
+        temperatureLabel.font = .helveticaNeueBold100
         temperatureLabel.textAlignment = .center
         temperatureLabel.translatesAutoresizingMaskIntoConstraints = false
         return temperatureLabel
     }()
     
-    let pressureLabel: UILabel = {
+    private let pressureLabel: UILabel = {
         let pressureLabel = UILabel()
         pressureLabel.textColor = .white
         pressureLabel.text = "Давление:"
-        pressureLabel.font = UIFont(name: "HelveticaNeue-Medium", size: 23)
+        pressureLabel.font = .helveticaNeueMedium23
         pressureLabel.textAlignment = .center
         pressureLabel.translatesAutoresizingMaskIntoConstraints = false
         return pressureLabel
     }()
     
-    let pressureLabelValue: UILabel = {
+    private let pressureLabelValue: UILabel = {
         let pressureLabelValue = UILabel()
         pressureLabelValue.textColor = .white
-        pressureLabelValue.font = UIFont(name: "HelveticaNeue-Medium", size: 23)
+        pressureLabelValue.font = .helveticaNeueMedium23
         pressureLabelValue.textAlignment = .center
         pressureLabelValue.translatesAutoresizingMaskIntoConstraints = false
         return pressureLabelValue
     }()
     
-    let humidityLabel: UILabel = {
+    private let humidityLabel: UILabel = {
         let humidityLabel = UILabel()
         humidityLabel.textColor = .white
-        humidityLabel.font = UIFont(name: "HelveticaNeue-Medium", size: 23)
+        humidityLabel.font = .helveticaNeueMedium23
         humidityLabel.text = "Влажность:"
         humidityLabel.textAlignment = .center
         humidityLabel.translatesAutoresizingMaskIntoConstraints = false
         return humidityLabel
     }()
     
-    let humidityLabelValue: UILabel = {
+    private let humidityLabelValue: UILabel = {
         let humidityLabelValue = UILabel()
         humidityLabelValue.textColor = .white
-        humidityLabelValue.font = UIFont(name: "HelveticaNeue-Medium", size: 23)
+        humidityLabelValue.font = .helveticaNeueMedium23
         humidityLabelValue.textAlignment = .center
         humidityLabelValue.translatesAutoresizingMaskIntoConstraints = false
         return humidityLabelValue
     }()
     
-    let imageView: UIImageView = {
+    private let imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "clear")
+        imageView.image = .clear
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -91,10 +91,11 @@ class MainCell: UICollectionViewCell {
         autolayoutSetup()
     }
     
-    func configure(city: Weather) {
+    func configure(city: City) {
         cityLabel.text = city.name
         
         guard let main = city.main else { return }
+        
         configureImageView(id: city.weather.first?.id)
         let degrees = Int(main.temp) - 273
         temperatureLabel.text = "\(degrees)°C"
@@ -104,15 +105,15 @@ class MainCell: UICollectionViewCell {
     
     private func configureImageView(id: Int?) {
         guard let id = id else {
-            imageView.image = UIImage(named: "clear")
+            imageView.image = .clear
             return }
         
         if (0..<501).contains(id) {
-            imageView.image = UIImage(named: "rain")
+            imageView.image = .rain
         } else if id > 801 {
-            imageView.image = UIImage(named: "cloud")
+            imageView.image = .cloud
         } else {
-            imageView.image = UIImage(named: "clear")
+            imageView.image = .clear
         }
     }
     

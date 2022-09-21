@@ -7,21 +7,20 @@
 
 import Foundation
 import Alamofire
-import RealmSwift
 
-class NetworkService: NetworkServiceProtocol {
+final class NetworkService: NetworkServiceProtocol {
     
-    func request<T: Decodable>(params: [String : String], completion: @escaping (Result<T, Error>) -> Void) {
+    func request<T: Decodable>(parameters: [String : String], completion: @escaping (Result<T, Error>) -> Void) {
         let baseUrl = "https://api.openweathermap.org/data/2.5/weather"
         let appid = "d931fa462f74e60a23984d4b55410584"
         
-        var param = ["appid" : appid, "lang" : "ru"]
+        var params = ["appid" : appid, "lang" : "ru"]
         
-        for i in params {
-            param[i.key] = i.value
+        for param in parameters {
+            params[param.key] = param.value
         }
         
-        AF.request(baseUrl, method: .get, parameters: param).responseDecodable(of: T.self) { responce in
+        AF.request(baseUrl, method: .get, parameters: params).responseDecodable(of: T.self) { responce in
             switch responce.result {
             case .success(let responce):
                 completion(.success(responce))
@@ -33,35 +32,9 @@ class NetworkService: NetworkServiceProtocol {
     }
 }
 
+// MARK: - CurrentWeatherNetworkServiceProtocol
 extension NetworkService: CurrentWeatherNetworkServiceProtocol {
-    func fetchWeather(params: [String : String], completion: @escaping (Result<Weather, Error>) -> Void) {
-        request(params: params, completion: completion)
-    }
-}
-
-
-class Weather: Object, Decodable {
-    var weather = List<Description>()
-    @objc dynamic var main: Main? = Main()
-    @objc dynamic var name: String = ""
-}
-
-class Main: Object, Decodable {
-    @objc dynamic var temp: Double = 0
-    @objc dynamic var pressure: Int = 0
-    @objc dynamic var humidity: Int = 0
-}
-
-class Description: Object, Decodable {
-    @objc dynamic var main: String = ""
-    @objc dynamic var id: Int = 0
-}
-
-extension RealmSwift.List: Decodable where Element: Decodable {
-    public convenience init(from decoder: Decoder) throws {
-        self.init()
-        let container = try decoder.singleValueContainer()
-        let decodedElements = try container.decode([Element].self)
-        self.append(objectsIn: decodedElements)
+    func fetchWeather(params: [String : String], completion: @escaping (Result<City, Error>) -> Void) {
+        request(parameters: params, completion: completion)
     }
 }

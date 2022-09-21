@@ -8,7 +8,7 @@
 import UIKit
 import Swinject
 
-class MainRouter: MainRouterProtocol {
+final class MainRouter: MainRouterProtocol {
     
     // MARK: - Dependency Injection
     private weak var container: Container!
@@ -19,6 +19,7 @@ class MainRouter: MainRouterProtocol {
         self.viewController = viewController
     }
     
+    // MARK: - MainRouterProtocol
     func pushSearchScreen(delegate: SearchDelegate) {
         guard let nc = viewController.navigationController,
               let searchConfigurator = container.resolve(SearchConfiguratorProtocol.self) else { return }

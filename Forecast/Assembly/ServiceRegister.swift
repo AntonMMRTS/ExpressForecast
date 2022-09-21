@@ -8,17 +8,14 @@
 import Foundation
 import Swinject
 
-class ServiceRegister {
+final class ServiceRegister {
     class func register(for container: Container) {
 
         container.register(StartAppServiceProtocol.self) { _ in
             return StartAppService(container: container)
         }
         
-        registerNetworkService(for: container)
-        registerLocationService(for: container)
-        registerDatabaseService(for: container)
-        registerReachabilityService(for: container)
+        registerServices(for: container)
         registerModules(for: container)
     }
     
@@ -31,28 +28,22 @@ class ServiceRegister {
         }
     }
     
-    private class func registerNetworkService(for container: Container) {
+    private class func registerServices(for container: Container) {
         let networkService = NetworkService()
         container.register(CurrentWeatherNetworkServiceProtocol.self) { _ in
             return networkService
         }.inObjectScope(.container)
-    }
-    
-    private class func registerLocationService(for container: Container) {
+        
         let locationService = LocationService()
         container.register(LocationServiceProtocol.self) { _ in
             return locationService
         }.inObjectScope(.container)
-    }
-    
-    private class func registerDatabaseService(for container: Container) {
+        
         let databaseService = DatabaseService()
         container.register(DatabaseServiceProtocol.self) { _ in
             return databaseService
         }.inObjectScope(.container)
-    }
-    
-    private class func registerReachabilityService(for container: Container) {
+        
         let reachabilityService = ReachabilityService()
         container.register(ReachabilityServiceProtocol.self) { _ in
             return reachabilityService

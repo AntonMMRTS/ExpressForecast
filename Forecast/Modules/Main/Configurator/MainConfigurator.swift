@@ -8,7 +8,7 @@
 import Foundation
 import Swinject
 
-class MainConfigurator: MainConfiguratorProtocol {
+final class MainConfigurator: MainConfiguratorProtocol {
     private weak var container: Container!
     
     init(container: Container) {

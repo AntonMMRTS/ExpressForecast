@@ -8,7 +8,7 @@
 import Foundation
 import Swinject
 
-class SearchConfigurator: SearchConfiguratorProtocol {
+final class SearchConfigurator: SearchConfiguratorProtocol {
     private weak var container: Container!
     
     init(container: Container) {

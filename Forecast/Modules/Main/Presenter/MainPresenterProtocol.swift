@@ -12,13 +12,13 @@ protocol MainPresenterProtocol: AnyObject {
     var router: MainRouterProtocol! { get }
     var interactor: MainInteractorProtocol! { get }
     
-    var cities: [Weather] { get }
+    var cities: [City] { get }
     
     func configureView()
     func pushSearchScreen()
 }
 
 protocol MainPresenterInteractionProtocol: AnyObject {
-    func succeccedFetchCurrentWeather(response: Weather)
+    func succeccedFetchCurrentWeather(response: City)
     func failureRequest()
 }

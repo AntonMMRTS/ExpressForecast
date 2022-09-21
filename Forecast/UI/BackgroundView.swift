@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BackgroundView: UIView {
+final class BackgroundView: UIView {
     
     private let titleLabel: UILabel = {
         let titleLabel = UILabel()

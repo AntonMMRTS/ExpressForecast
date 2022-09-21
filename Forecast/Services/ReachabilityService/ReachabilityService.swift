@@ -8,7 +8,7 @@
 import Foundation
 import Network
 
-class ReachabilityService: ReachabilityServiceProtocol {
+final class ReachabilityService: ReachabilityServiceProtocol {
     let monitor = NWPathMonitor()
     let queue = DispatchQueue(label: "InternetConnectionMonitor")
     

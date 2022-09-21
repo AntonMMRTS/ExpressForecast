@@ -7,24 +7,24 @@
 
 import UIKit
 
-class SearchCell: UITableViewCell {
+final class SearchCell: UITableViewCell {
     
     static let identifier = "SearchCell"
     
-    let cityLabel: UILabel = {
+    var completion: (() -> Void)?
+    
+    private let cityLabel: UILabel = {
         let cityLabel = UILabel()
         cityLabel.textColor = .black
-        cityLabel.font = UIFont(name: "HelveticaNeue-Medium", size: 23)
+        cityLabel.font = .helveticaNeueMedium23
         cityLabel.textAlignment = .left
         cityLabel.translatesAutoresizingMaskIntoConstraints = false
         return cityLabel
     }()
     
-    var completion: (() -> Void)?
-    
     private let actionButton: UIButton = {
         let actionButton = UIButton()
-        actionButton.setImage(UIImage(named: "addIcon"), for: .normal)
+        actionButton.setImage(UIImage.addIcon, for: .normal)
         actionButton.translatesAutoresizingMaskIntoConstraints = false
         return actionButton
     }()
@@ -38,14 +38,14 @@ class SearchCell: UITableViewCell {
         fatalError("not implemented")
     }
     
-    func configure(city: Weather, completion: (() -> Void)? = nil) {
+    func configure(city: City, completion: (() -> Void)? = nil) {
         cityLabel.text = city.name
         
         self.completion = completion
         actionButton.addTarget(self, action: #selector(actionButtonDidTap), for: .touchUpInside)
     }
     
-    func configureView() {
+    private func configureView() {
         contentView.addSubview(actionButton)
         contentView.addSubview(cityLabel)
         

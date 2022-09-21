@@ -41,6 +41,10 @@
 		F36594C928D745140075F879 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F36594C828D745140075F879 /* Assets.xcassets */; };
 		F36594CC28D745140075F879 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F36594CA28D745140075F879 /* LaunchScreen.storyboard */; };
 		F36594D928D747FC0075F879 /* ServiceRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36594D828D747FC0075F879 /* ServiceRegister.swift */; };
+		F3BEDF2D28DAC0CD00F3C164 /* LocationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BEDF2C28DAC0CD00F3C164 /* LocationDelegate.swift */; };
+		F3BEDF3028DAC26700F3C164 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BEDF2F28DAC26700F3C164 /* City.swift */; };
+		F3BEDF3228DAC47400F3C164 /* UIImage+custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BEDF3128DAC47400F3C164 /* UIImage+custom.swift */; };
+		F3BEDF3428DAC5C800F3C164 /* UIFont+custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3BEDF3328DAC5C800F3C164 /* UIFont+custom.swift */; };
 		F3D8BC1B28D74FBA00B625EF /* MainConfiguratorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D8BC1A28D74FBA00B625EF /* MainConfiguratorProtocol.swift */; };
 		F3D8BC1D28D74FC800B625EF /* MainConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D8BC1C28D74FC800B625EF /* MainConfigurator.swift */; };
 		F3D8BC1F28D7500C00B625EF /* MainInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D8BC1E28D7500C00B625EF /* MainInteractorProtocol.swift */; };
@@ -108,6 +112,10 @@
 		F36594CB28D745140075F879 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F36594CD28D745140075F879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F36594D828D747FC0075F879 /* ServiceRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceRegister.swift; sourceTree = "<group>"; };
+		F3BEDF2C28DAC0CD00F3C164 /* LocationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDelegate.swift; sourceTree = "<group>"; };
+		F3BEDF2F28DAC26700F3C164 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		F3BEDF3128DAC47400F3C164 /* UIImage+custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+custom.swift"; sourceTree = "<group>"; };
+		F3BEDF3328DAC5C800F3C164 /* UIFont+custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+custom.swift"; sourceTree = "<group>"; };
 		F3D8BC1A28D74FBA00B625EF /* MainConfiguratorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainConfiguratorProtocol.swift; sourceTree = "<group>"; };
 		F3D8BC1C28D74FC800B625EF /* MainConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainConfigurator.swift; sourceTree = "<group>"; };
 		F3D8BC1E28D7500C00B625EF /* MainInteractorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractorProtocol.swift; sourceTree = "<group>"; };
@@ -156,6 +164,7 @@
 			children = (
 				F30F732328D83AEF002BE901 /* LocationService.swift */,
 				F30F732528D83F5D002BE901 /* LocationServiceProtocol.swift */,
+				F3BEDF2C28DAC0CD00F3C164 /* LocationDelegate.swift */,
 			);
 			path = LocationService;
 			sourceTree = "<group>";
@@ -254,6 +263,7 @@
 		F314C4E128DA0E830030FD01 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				F3BEDF3528DAC7CF00F3C164 /* Extensions */,
 				F314C4E228DA0E9E0030FD01 /* BackgroundView.swift */,
 			);
 			path = UI;
@@ -281,6 +291,7 @@
 		F36594BE28D745130075F879 /* Forecast */ = {
 			isa = PBXGroup;
 			children = (
+				F3BEDF2E28DAC25400F3C164 /* Model */,
 				F314C4E528DA1DE20030FD01 /* Modules */,
 				F314C4E128DA0E830030FD01 /* UI */,
 				F3D8BC3328D75B6C00B625EF /* Services */,
@@ -292,6 +303,23 @@
 				F36594CD28D745140075F879 /* Info.plist */,
 			);
 			path = Forecast;
+			sourceTree = "<group>";
+		};
+		F3BEDF2E28DAC25400F3C164 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F3BEDF2F28DAC26700F3C164 /* City.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F3BEDF3528DAC7CF00F3C164 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F3BEDF3328DAC5C800F3C164 /* UIFont+custom.swift */,
+				F3BEDF3128DAC47400F3C164 /* UIImage+custom.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F3D8BC1428D74F5100B625EF /* Main */ = {
@@ -478,6 +506,7 @@
 				F3D8BC3D28D769E800B625EF /* CurrentWeatherNetworkService.swift in Sources */,
 				F314C4DB28D9A2F60030FD01 /* SearchDelegate.swift in Sources */,
 				F3D8BC2D28D755B000B625EF /* DependencyContainer.swift in Sources */,
+				F3BEDF3228DAC47400F3C164 /* UIImage+custom.swift in Sources */,
 				F30F732428D83AEF002BE901 /* LocationService.swift in Sources */,
 				F3D8BC2F28D7560F00B625EF /* StartAppService.swift in Sources */,
 				F36594C428D745130075F879 /* MainViewController.swift in Sources */,
@@ -487,6 +516,7 @@
 				F3D8BC3828D767B300B625EF /* NetworkServiceProtocol.swift in Sources */,
 				F3D8BC2328D750B200B625EF /* MainRouterProtocol.swift in Sources */,
 				F36594C028D745130075F879 /* AppDelegate.swift in Sources */,
+				F3BEDF3428DAC5C800F3C164 /* UIFont+custom.swift in Sources */,
 				F314C4E328DA0E9E0030FD01 /* BackgroundView.swift in Sources */,
 				F36594D928D747FC0075F879 /* ServiceRegister.swift in Sources */,
 				F3D8BC2528D750E600B625EF /* MainRouter.swift in Sources */,
@@ -495,12 +525,14 @@
 				F314C4D828D98CBB0030FD01 /* DatabaseServiceProtocol.swift in Sources */,
 				F30F733D28D8C50A002BE901 /* SearchInteractorProtocol.swift in Sources */,
 				F30F733328D8C39B002BE901 /* SearchViewProtocol.swift in Sources */,
+				F3BEDF3028DAC26700F3C164 /* City.swift in Sources */,
 				F30F732628D83F5D002BE901 /* LocationServiceProtocol.swift in Sources */,
 				F3D8BC2928D7512000B625EF /* MainPresenter.swift in Sources */,
 				F3D8BC3128D7569C00B625EF /* StartAppServiceProtocol.swift in Sources */,
 				F30F732928D868BC002BE901 /* MainCell.swift in Sources */,
 				F314C4E028D9F7350030FD01 /* ReachabilityServiceProtocol.swift in Sources */,
 				F36594C228D745130075F879 /* SceneDelegate.swift in Sources */,
+				F3BEDF2D28DAC0CD00F3C164 /* LocationDelegate.swift in Sources */,
 				F3D8BC2B28D7514200B625EF /* MainViewProtocol.swift in Sources */,
 				F30F733728D8C423002BE901 /* SearchPresenter.swift in Sources */,
 				F30F734128D8C5A3002BE901 /* SearchConfiguratorProtocol.swift in Sources */,

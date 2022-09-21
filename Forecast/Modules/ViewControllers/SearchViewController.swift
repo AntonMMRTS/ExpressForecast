@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchViewController: UIViewController, SearchViewProtocol {
+final class SearchViewController: UIViewController, SearchViewProtocol {
     
     // MARK: - MainViewProtocol Properties
     var presenter: SearchPresenterProtocol!
@@ -25,14 +25,14 @@ class SearchViewController: UIViewController, SearchViewProtocol {
     private let backButton: UIButton = {
         let backButton = UIButton()
         backButton.translatesAutoresizingMaskIntoConstraints = false
-        backButton.setImage(UIImage(named: "backIcon"), for: .normal)
+        backButton.setImage(.backIcon, for: .normal)
         return backButton
     }()
     
     private let searchTextfield: UITextField = {
         let searchTextfield = UITextField()
         searchTextfield.returnKeyType = .search
-        searchTextfield.font = UIFont(name: "HelveticaNeue-Medium", size: 18)
+        searchTextfield.font = .helveticaNeueMedium18
         searchTextfield.autocapitalizationType = .words
         searchTextfield.backgroundColor = .white
         searchTextfield.textColor = .black
@@ -51,17 +51,14 @@ class SearchViewController: UIViewController, SearchViewProtocol {
     // MARK: -Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         view.backgroundColor = .systemGray5
         presenter.configureView()
     }
     
     // MARK: - MainViewProtocol Methods
     func configureView() {
-        searchTextfield.delegate = self
-        citiesTableView.delegate = self
-        citiesTableView.dataSource = self
-        searchTextfield.becomeFirstResponder()
+        configureSettings()
         initializeHideKeyboard()
         configure()
     }
@@ -69,9 +66,10 @@ class SearchViewController: UIViewController, SearchViewProtocol {
     func updateView() {
         citiesTableView.reloadData()
     }
-    
-    // MARK: - Private Methods
-    private func configure() {
+}
+// MARK: - Private Methods
+private extension SearchViewController {
+    func configure() {
         searchView.addSubview(backButton)
         searchView.addSubview(searchTextfield)
         view.addSubview(searchView)
@@ -104,23 +102,30 @@ class SearchViewController: UIViewController, SearchViewProtocol {
         navigationItemSettings()
     }
     
-    private func navigationItemSettings() {
+    func configureSettings() {
+        searchTextfield.delegate = self
+        citiesTableView.delegate = self
+        citiesTableView.dataSource = self
+        searchTextfield.becomeFirstResponder()
+    }
+    
+    func navigationItemSettings() {
         navigationController?.setNavigationBarHidden(true, animated: false)
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
     }
     
     @objc
-    private func searchTextfieldChanged(_ sender: UITextField) {
+    func searchTextfieldChanged(_ sender: UITextField) {
         guard let text = sender.text, !text.isEmpty else { return }
         presenter.searchTextFieldDidChange(text: text)
     }
     
     @objc
-    private func backButtonDidTap() {
+    func backButtonDidTap() {
         presenter.backToMainScreen()
     }
     
-    private func initializeHideKeyboard() {
+    func initializeHideKeyboard() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(
             target: self,
             action: #selector(dismissKeyboard))
@@ -129,17 +134,17 @@ class SearchViewController: UIViewController, SearchViewProtocol {
     }
     
     @objc
-    private func dismissKeyboard() {
+    func dismissKeyboard() {
         view.endEditing(true)
     }
     
-    private func searchButtonDidTap() {
+    func searchButtonDidTap() {
         guard let text = searchTextfield.text, text.count > 2 else { return }
-        
         presenter.searchCity(text: text)
     }
 }
 
+// MARK: - UITextFieldDelegate
 extension SearchViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
@@ -148,6 +153,7 @@ extension SearchViewController: UITextFieldDelegate {
     }
 }
 
+// MARK: - UITableViewDelegate, UITableViewDataSource
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         presenter.cities.count

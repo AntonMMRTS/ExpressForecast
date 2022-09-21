@@ -8,12 +8,12 @@
 import Foundation
 import RealmSwift
 
-class DatabaseService: DatabaseServiceProtocol {
+final class DatabaseService: DatabaseServiceProtocol {
     
     fileprivate lazy var realm = try! Realm(configuration: .defaultConfiguration)
     
-    func addNewCity(city: Weather) {
-        let newCity = Weather()
+    func addNewCity(city: City) {
+        let newCity = City()
         
         newCity.name = city.name
         newCity.main = city.main
@@ -24,27 +24,14 @@ class DatabaseService: DatabaseServiceProtocol {
         }
     }
     
-    func updateCityStart() {
-        realm.beginWrite()
-    }
-    
-    func updateCityEnd() {
-        try? realm.commitWrite()
-    }
-    
-    func fetchCities() -> [Weather] {
-        let models = realm.objects(Weather.self)
+    func fetchCities() -> [City] {
+        let models = realm.objects(City.self)
         return Array(models)
-        return []
     }
     
-    func deleteCity(city: Weather) {
+    func deleteCity(city: City) {
         try? realm.write {
             realm.delete(city)
         }
-    }
-    
-    func deleteAll() {
-        realm.deleteAll()
     }
 }

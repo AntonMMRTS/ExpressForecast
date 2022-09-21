@@ -7,19 +7,20 @@
 
 import Foundation
 
-class SearchPresenter: SearchPresenterProtocol {
+final class SearchPresenter: SearchPresenterProtocol {
+    
+    // MARK: - Dependency Injection
     weak var view: SearchViewProtocol!
     weak var delegate: SearchDelegate?
     private(set) var router: SearchRouterProtocol!
     private(set) var interactor: SearchInteractorProtocol!
     
-    private var inputTimer: Timer?
-    
-    private(set) var cities: [Weather]  = [] {
+    private(set) var cities: [City]  = [] {
         didSet {
             view.updateView()
         }
     }
+    private var inputTimer: Timer?
     
     init(router: SearchRouterProtocol,
          interactor: SearchInteractorProtocol,
@@ -29,6 +30,7 @@ class SearchPresenter: SearchPresenterProtocol {
         self.delegate = delegate
     }
     
+    // MARK: - SearchPresenterProtocol
     func configureView() {
         view.configureView()
     }
@@ -41,7 +43,7 @@ class SearchPresenter: SearchPresenterProtocol {
         interactor.searchCity(text: text)
     }
     
-    func addCityToDatabase(city: Weather) {
+    func addCityToDatabase(city: City) {
         delegate?.addCity(city: city)
         interactor.addCityToDatabase(city: city)
     }
@@ -58,8 +60,9 @@ class SearchPresenter: SearchPresenterProtocol {
     }
 }
 
+// MARK: - SearchPresenterInteractionProtocol
 extension SearchPresenter: SearchPresenterInteractionProtocol {
-    func succeccedFetchCurrentWeather(response: Weather) {
+    func succeccedFetchCurrentWeather(response: City) {
         self.cities.append(response)
     }
     

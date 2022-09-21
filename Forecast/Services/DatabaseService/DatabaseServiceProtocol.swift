@@ -8,16 +8,7 @@
 import Foundation
 
 protocol DatabaseServiceProtocol {
-    
-    func addNewCity(city: Weather)
-    
-    func updateCityStart()
-    
-    func updateCityEnd()
-    
-    func fetchCities() -> [Weather]
-    
-    func deleteCity(city: Weather)
-    
-    func deleteAll()
+    func addNewCity(city: City)
+    func fetchCities() -> [City]
+    func deleteCity(city: City)
 }

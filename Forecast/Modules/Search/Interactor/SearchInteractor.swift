@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SearchInteractor: SearchInteractorProtocol {
+final class SearchInteractor: SearchInteractorProtocol {
     // MARK: - Dependency Injection
     private var currentWeatherNetworkService: CurrentWeatherNetworkServiceProtocol!
     private var databaseService: DatabaseServiceProtocol!
@@ -33,7 +33,8 @@ class SearchInteractor: SearchInteractorProtocol {
         }
     }
     
-    func addCityToDatabase(city: Weather) {
+    // MARK: - SearchInteractorProtocol
+    func addCityToDatabase(city: City) {
         databaseService.addNewCity(city: city)
     }
 }

@@ -8,19 +8,13 @@
 import Foundation
 import CoreLocation
 
-protocol LocationDelegate: AnyObject {
-    func updateLocation(location: CLLocation)
-}
-
-class LocationService: NSObject, CLLocationManagerDelegate, LocationServiceProtocol {
+final class LocationService: NSObject, CLLocationManagerDelegate, LocationServiceProtocol {
     var delegate: LocationDelegate!
     
     var status: CLAuthorizationStatus?
-    
-    var manager: CLLocationManager?
     var location: CLLocation?
-    var isLocation: Bool = false
-    var isPermission = false
+    
+    private var manager: CLLocationManager?
     
     override init() {
         super.init()
@@ -29,7 +23,6 @@ class LocationService: NSObject, CLLocationManagerDelegate, LocationServiceProto
         manager?.delegate = self
         manager?.desiredAccuracy = kCLLocationAccuracyBest
         manager?.startMonitoringSignificantLocationChanges()
-//        manager?.requestWhenInUseAuthorization()
         status = manager?.authorizationStatus
     }
     
@@ -43,17 +36,5 @@ class LocationService: NSObject, CLLocationManagerDelegate, LocationServiceProto
     func checkPermission() {
         manager?.requestWhenInUseAuthorization()
     }
-    
-//    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-//
-//        switch manager.authorizationStatus {
-//        case .authorizedAlways, .authorizedWhenInUse:
-//            isPermission = true
-//        case .notDetermined , .denied , .restricted:
-//           break
-//        default:
-//            break
-//        }
-//    }
 }
     

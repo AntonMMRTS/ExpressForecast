@@ -8,7 +8,7 @@
 import UIKit
 import Swinject
 
-class StartAppService: StartAppServiceProtocol {
+final class StartAppService: StartAppServiceProtocol {
     // MARK: - Dependency Injection
     private let container: Container!
     
@@ -20,8 +20,10 @@ class StartAppService: StartAppServiceProtocol {
         let window = UIWindow(windowScene: scene)
         
         guard let mainConfigurator = container.resolve(MainConfiguratorProtocol.self) else { return nil }
+        
         let mainVC = MainViewController()
         mainConfigurator.configure(viewController: mainVC)
+        
         let nacVC = UINavigationController(rootViewController: mainVC)
         window.rootViewController = nacVC
         window.makeKeyAndVisible()
