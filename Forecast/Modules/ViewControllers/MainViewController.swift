@@ -1,10 +1,3 @@
-//
-//  ViewController.swift
-//  Forecast
-//
-//  Created by Антон Усов on 18.09.2022.
-//
-
 import UIKit
 import Swinject
 
