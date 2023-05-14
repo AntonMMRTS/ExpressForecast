@@ -12,7 +12,9 @@ final class MainViewController: UIViewController, MainViewProtocol {
     // MARK: -Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        print("1")
+        print("2")
+        print("3")
         presenter.configureView()
     }
     
