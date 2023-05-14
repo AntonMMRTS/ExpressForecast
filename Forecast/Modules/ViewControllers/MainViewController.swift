@@ -13,6 +13,11 @@ final class MainViewController: UIViewController, MainViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
        
+        print("4")
+        print("10")
+        print("11")
+        print("12")
+        print("13")
         presenter.configureView()
     }
     
